@@ -1,0 +1,635 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Services Block Variants</title>
+    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body {
+            font-family: 'Space Grotesk', -apple-system, sans-serif;
+            background: #e5e5e5;
+            color: #1a1a1a;
+            line-height: 1.5;
+            padding: 40px 20px;
+        }
+        .variant {
+            max-width: 760px;
+            margin: 0 auto 60px;
+            background: #FAF9F7;
+            border-radius: 20px;
+            padding: 40px;
+        }
+        .variant-label {
+            background: #1a1a1a;
+            color: #fff;
+            padding: 8px 16px;
+            border-radius: 8px;
+            font-size: 14px;
+            font-weight: 700;
+            margin-bottom: 32px;
+            display: inline-block;
+        }
+        .section-title {
+            font-size: 20px;
+            font-weight: 700;
+            margin-bottom: 24px;
+        }
+
+        /* ===== VARIANT 1: Ultra Minimalist (just links) ===== */
+        .v1-services {
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+        }
+        .v1-link {
+            color: #1a1a1a;
+            text-decoration: none;
+            font-size: 16px;
+            display: flex;
+            justify-content: space-between;
+            padding: 8px 0;
+            border-bottom: 1px solid #e5e5e5;
+        }
+        .v1-link:hover {
+            color: #666;
+        }
+        .v1-link span {
+            color: #999;
+            font-size: 14px;
+        }
+
+        /* ===== VARIANT 2: Simple Text Block ===== */
+        .v2-text {
+            font-size: 16px;
+            color: #666;
+            line-height: 1.8;
+        }
+        .v2-text a {
+            color: #1a1a1a;
+            font-weight: 500;
+        }
+
+        /* ===== VARIANT 3: Compact Accordion Style ===== */
+        .v3-list {
+            display: flex;
+            flex-direction: column;
+            gap: 8px;
+        }
+        .v3-item {
+            background: #fff;
+            border-radius: 12px;
+            padding: 16px 20px;
+            text-decoration: none;
+            color: inherit;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            transition: background 0.2s;
+        }
+        .v3-item:hover {
+            background: #f5f5f5;
+        }
+        .v3-item .name {
+            font-weight: 600;
+            font-size: 15px;
+        }
+        .v3-item .price {
+            color: #666;
+            font-size: 14px;
+        }
+        .v3-divider {
+            font-size: 12px;
+            color: #999;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin: 16px 0 8px;
+        }
+
+        /* ===== VARIANT 4: Two Column Simple ===== */
+        .v4-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 24px;
+        }
+        .v4-section h3 {
+            font-size: 14px;
+            color: #999;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin-bottom: 16px;
+        }
+        .v4-item {
+            display: block;
+            text-decoration: none;
+            color: inherit;
+            margin-bottom: 12px;
+        }
+        .v4-item:hover .v4-name {
+            text-decoration: underline;
+        }
+        .v4-name {
+            font-weight: 600;
+            font-size: 15px;
+        }
+        .v4-meta {
+            font-size: 13px;
+            color: #666;
+        }
+
+        /* ===== VARIANT 5: Single CTA Focus ===== */
+        .v5-block {
+            text-align: center;
+            padding: 40px;
+            background: #fff;
+            border-radius: 16px;
+        }
+        .v5-block h3 {
+            font-size: 22px;
+            margin-bottom: 12px;
+        }
+        .v5-block p {
+            color: #666;
+            font-size: 15px;
+            margin-bottom: 24px;
+            max-width: 400px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+        .v5-cta {
+            display: inline-block;
+            background: #1a1a1a;
+            color: #fff;
+            padding: 14px 32px;
+            border-radius: 8px;
+            text-decoration: none;
+            font-weight: 600;
+        }
+        .v5-links {
+            margin-top: 20px;
+            font-size: 14px;
+            color: #666;
+        }
+        .v5-links a {
+            color: #1a1a1a;
+            margin: 0 8px;
+        }
+
+        /* ===== VARIANT 6: Inline Subtle ===== */
+        .v6-inline {
+            font-size: 16px;
+            line-height: 2;
+        }
+        .v6-inline a {
+            color: #1a1a1a;
+            text-decoration: underline;
+            text-underline-offset: 3px;
+        }
+        .v6-inline .price {
+            color: #999;
+            font-size: 14px;
+        }
+
+        /* ===== VARIANT 7: Cards but Muted ===== */
+        .v7-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 12px;
+            margin-bottom: 12px;
+        }
+        .v7-card {
+            background: #fff;
+            border-radius: 12px;
+            padding: 20px;
+            text-decoration: none;
+            color: inherit;
+            border: 1px solid #eee;
+            transition: border-color 0.2s;
+        }
+        .v7-card:hover {
+            border-color: #ccc;
+        }
+        .v7-name {
+            font-weight: 600;
+            font-size: 15px;
+            margin-bottom: 4px;
+        }
+        .v7-price {
+            font-size: 18px;
+            font-weight: 700;
+            margin-bottom: 8px;
+        }
+        .v7-desc {
+            font-size: 12px;
+            color: #999;
+        }
+        .v7-row {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 12px;
+        }
+        .v7-card.dark {
+            background: #1a1a1a;
+            color: #fff;
+            border: none;
+        }
+        .v7-card.dark .v7-desc {
+            color: rgba(255,255,255,0.6);
+        }
+    </style>
+</head>
+<body>
+
+<!-- VARIANT 1: Ultra Minimalist -->
+<div class="variant">
+    <span class="variant-label">1. Ультра-минимализм</span>
+    <h2 class="section-title">Work With Me</h2>
+    <div class="v1-services">
+        <a href="#" class="v1-link">Ads Audit (Apple or Meta) <span>$497</span></a>
+        <a href="#" class="v1-link">Product Audit <span>$597</span></a>
+        <a href="#" class="v1-link">Full Audit (Ads + Product) <span>$997</span></a>
+        <a href="#" class="v1-link">Growth Retainer <span>$2,997/mo</span></a>
+        <a href="#" class="v1-link">Enterprise <span>$9,990/mo</span></a>
+    </div>
+</div>
+
+<!-- VARIANT 2: Simple Text -->
+<div class="variant">
+    <span class="variant-label">2. Текстовый блок</span>
+    <h2 class="section-title">Work With Me</h2>
+    <p class="v2-text">
+        I offer <a href="#">ads audits</a> ($497) and <a href="#">product audits</a> ($597)
+        as one-time deep dives into your app's growth potential.
+        For ongoing support, check out my <a href="#">Growth retainer</a> ($2,997/mo) —
+        async consulting via Email & Telegram with weekly check-ins.
+    </p>
+</div>
+
+<!-- VARIANT 3: Compact List -->
+<div class="variant">
+    <span class="variant-label">3. Компактный список</span>
+    <h2 class="section-title">Work With Me</h2>
+    <div class="v3-list">
+        <div class="v3-divider">One-time</div>
+        <a href="#" class="v3-item">
+            <span class="name">Ads Audit</span>
+            <span class="price">$497</span>
+        </a>
+        <a href="#" class="v3-item">
+            <span class="name">Product Audit</span>
+            <span class="price">$597</span>
+        </a>
+        <a href="#" class="v3-item">
+            <span class="name">Full Audit</span>
+            <span class="price">$997</span>
+        </a>
+        <div class="v3-divider">Ongoing</div>
+        <a href="#" class="v3-item">
+            <span class="name">Growth</span>
+            <span class="price">$2,997/mo</span>
+        </a>
+        <a href="#" class="v3-item">
+            <span class="name">Enterprise</span>
+            <span class="price">$9,990/mo</span>
+        </a>
+    </div>
+</div>
+
+<!-- VARIANT 4: Two Column -->
+<div class="variant">
+    <span class="variant-label">4. Две колонки</span>
+    <h2 class="section-title">Work With Me</h2>
+    <div class="v4-grid">
+        <div class="v4-section">
+            <h3>Audits</h3>
+            <a href="#" class="v4-item">
+                <div class="v4-name">Ads Audit — $497</div>
+                <div class="v4-meta">Apple Ads or Meta Ads review</div>
+            </a>
+            <a href="#" class="v4-item">
+                <div class="v4-name">Product Audit — $597</div>
+                <div class="v4-meta">Monetization & conversion</div>
+            </a>
+            <a href="#" class="v4-item">
+                <div class="v4-name">Full Audit — $997</div>
+                <div class="v4-meta">Both combined</div>
+            </a>
+        </div>
+        <div class="v4-section">
+            <h3>Retainers</h3>
+            <a href="#" class="v4-item">
+                <div class="v4-name">Growth — $2,997/mo</div>
+                <div class="v4-meta">Async support, weekly check-ins</div>
+            </a>
+            <a href="#" class="v4-item">
+                <div class="v4-name">Enterprise — $9,990/mo</div>
+                <div class="v4-meta">Calls + hands-on help</div>
+            </a>
+        </div>
+    </div>
+</div>
+
+<!-- VARIANT 5: Single CTA -->
+<div class="variant">
+    <span class="variant-label">5. Один CTA</span>
+    <h2 class="section-title">Work With Me</h2>
+    <div class="v5-block">
+        <h3>Let's grow your app together</h3>
+        <p>I help app founders scale with paid ads and product optimization. One-time audits or ongoing retainers.</p>
+        <a href="mailto:ivan@sparrowapps.io" class="v5-cta">Get in Touch</a>
+        <div class="v5-links">
+            Or check: <a href="#">Audits</a> · <a href="#">Growth</a> · <a href="#">Enterprise</a>
+        </div>
+    </div>
+</div>
+
+<!-- VARIANT 6: Inline -->
+<div class="variant">
+    <span class="variant-label">6. Инлайн</span>
+    <h2 class="section-title">Work With Me</h2>
+    <p class="v6-inline">
+        <a href="#">Ads Audit</a> <span class="price">$497</span> ·
+        <a href="#">Product Audit</a> <span class="price">$597</span> ·
+        <a href="#">Full Audit</a> <span class="price">$997</span><br>
+        <a href="#">Growth Retainer</a> <span class="price">$2,997/mo</span> ·
+        <a href="#">Enterprise</a> <span class="price">$9,990/mo</span>
+    </p>
+</div>
+
+<!-- VARIANT 7: Muted Cards -->
+<div class="variant">
+    <span class="variant-label">7. Приглушённые карточки</span>
+    <h2 class="section-title">Work With Me</h2>
+    <div class="v7-grid">
+        <a href="#" class="v7-card">
+            <div class="v7-name">Ads Audit</div>
+            <div class="v7-price">$497</div>
+            <div class="v7-desc">Apple or Meta Ads</div>
+        </a>
+        <a href="#" class="v7-card">
+            <div class="v7-name">Product Audit</div>
+            <div class="v7-price">$597</div>
+            <div class="v7-desc">Monetization & UX</div>
+        </a>
+        <a href="#" class="v7-card">
+            <div class="v7-name">Full Audit</div>
+            <div class="v7-price">$997</div>
+            <div class="v7-desc">Ads + Product</div>
+        </a>
+    </div>
+    <div class="v7-row">
+        <a href="#" class="v7-card dark">
+            <div class="v7-name">Growth</div>
+            <div class="v7-price">$2,997/mo</div>
+            <div class="v7-desc">Async consulting + audits</div>
+        </a>
+        <a href="#" class="v7-card dark">
+            <div class="v7-name">Enterprise</div>
+            <div class="v7-price">$9,990/mo</div>
+            <div class="v7-desc">Calls + hands-on</div>
+        </a>
+    </div>
+</div>
+
+<!-- VARIANT 8: Current with Pastel Colors -->
+<div class="variant">
+    <span class="variant-label">8. Текущий + пастельные цвета</span>
+    <h2 class="section-title">Work With Me</h2>
+
+    <style>
+        .v8-services {
+            display: flex;
+            gap: 12px;
+            margin-bottom: 12px;
+        }
+        .v8-label {
+            writing-mode: vertical-rl;
+            transform: rotate(180deg);
+            font-size: 11px;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            color: #fff;
+            padding: 16px 8px;
+            border-radius: 8px;
+        }
+        .v8-label.audits { background: linear-gradient(180deg, #93c5fd, #60a5fa); }
+        .v8-label.growth { background: linear-gradient(180deg, #fdba74, #fb923c); }
+
+        .v8-audits {
+            display: flex;
+            flex: 1;
+            border-radius: 16px;
+            overflow: hidden;
+        }
+        .v8-audit {
+            flex: 1;
+            padding: 20px;
+            text-decoration: none;
+            color: #1a1a1a;
+            display: flex;
+            flex-direction: column;
+            transition: transform 0.2s;
+        }
+        .v8-audit:hover {
+            transform: scale(1.02);
+        }
+        .v8-audit.ads {
+            background: linear-gradient(135deg, #e0f2fe, #bae6fd);
+        }
+        .v8-audit.product {
+            background: linear-gradient(135deg, #f3e8ff, #e9d5ff);
+        }
+        .v8-audit.bundle {
+            background: linear-gradient(135deg, #d1fae5, #a7f3d0);
+            position: relative;
+        }
+        .v8-badge {
+            position: absolute;
+            top: -10px;
+            right: 16px;
+            font-size: 11px;
+            font-weight: 700;
+            padding: 6px 12px;
+            background: #fde68a;
+            color: #1a1a1a;
+            border-radius: 6px;
+            transform: rotate(2deg);
+        }
+        .v8-name {
+            font-size: 15px;
+            font-weight: 700;
+            margin-bottom: 4px;
+        }
+        .v8-price {
+            font-size: 24px;
+            font-weight: 700;
+            margin-bottom: 8px;
+        }
+        .v8-list {
+            list-style: none;
+            font-size: 12px;
+            color: #666;
+            margin-bottom: 16px;
+            flex-grow: 1;
+        }
+        .v8-list li {
+            padding-left: 12px;
+            position: relative;
+            margin-bottom: 4px;
+        }
+        .v8-list li::before {
+            content: "•";
+            position: absolute;
+            left: 0;
+        }
+        .v8-cta {
+            display: inline-block;
+            padding: 10px 20px;
+            background: #1a1a1a;
+            color: #fff;
+            border-radius: 8px;
+            font-size: 14px;
+            font-weight: 600;
+            text-decoration: none;
+            margin-top: auto;
+        }
+        .v8-audit.bundle .v8-cta {
+            background: #065f46;
+        }
+
+        .v8-growth-grid {
+            display: flex;
+            flex: 1;
+            gap: 12px;
+        }
+        .v8-growth {
+            flex: 1;
+            padding: 24px;
+            border-radius: 16px;
+            text-decoration: none;
+            color: #fff;
+            display: flex;
+            flex-direction: column;
+            transition: transform 0.2s;
+        }
+        .v8-growth:hover {
+            transform: scale(1.02);
+        }
+        .v8-growth.standard {
+            background: linear-gradient(135deg, #374151, #4b5563);
+        }
+        .v8-growth.premium {
+            background: linear-gradient(135deg, #a78bfa, #8b5cf6);
+        }
+        .v8-growth .v8-badge-inline {
+            display: inline-block;
+            font-size: 10px;
+            font-weight: 700;
+            padding: 4px 10px;
+            background: rgba(255,255,255,0.2);
+            border-radius: 4px;
+            margin-bottom: 12px;
+        }
+        .v8-growth .v8-name {
+            font-size: 18px;
+            color: #fff;
+        }
+        .v8-growth .v8-price {
+            font-size: 28px;
+            color: #fff;
+        }
+        .v8-growth .v8-price span {
+            font-size: 14px;
+            opacity: 0.6;
+        }
+        .v8-growth .v8-list {
+            color: rgba(255,255,255,0.7);
+        }
+        .v8-growth .v8-list li::before {
+            content: "✓";
+        }
+        .v8-growth .v8-cta {
+            background: #fff;
+            color: #1a1a1a;
+        }
+        .v8-growth .v8-note {
+            font-size: 11px;
+            opacity: 0.5;
+            margin-top: 12px;
+        }
+    </style>
+
+    <!-- Audits -->
+    <div class="v8-services">
+        <div class="v8-label audits">Audits</div>
+        <div class="v8-audits">
+            <a href="#" class="v8-audit ads">
+                <div class="v8-name">Ads Audit</div>
+                <div class="v8-price">$497</div>
+                <ul class="v8-list">
+                    <li>Apple Ads or Meta Ads</li>
+                    <li>Account structure review</li>
+                    <li>Loom or PDF/Notion</li>
+                </ul>
+                <span class="v8-cta">Buy Now</span>
+            </a>
+            <a href="#" class="v8-audit product">
+                <div class="v8-name">Product Audit</div>
+                <div class="v8-price">$597</div>
+                <ul class="v8-list">
+                    <li>Monetization strategy</li>
+                    <li>Paywall & pricing review</li>
+                    <li>Loom or PDF/Notion</li>
+                </ul>
+                <span class="v8-cta">Buy Now</span>
+            </a>
+            <a href="#" class="v8-audit bundle">
+                <span class="v8-badge">Save $97</span>
+                <div class="v8-name">Full Audit</div>
+                <div class="v8-price">$997</div>
+                <ul class="v8-list">
+                    <li>Ads + Product combined</li>
+                    <li>Growth roadmap</li>
+                    <li>Loom or PDF/Notion</li>
+                </ul>
+                <span class="v8-cta">Buy Now</span>
+            </a>
+        </div>
+    </div>
+
+    <!-- Growth -->
+    <div class="v8-services">
+        <div class="v8-label growth">Growth</div>
+        <div class="v8-growth-grid">
+            <a href="#" class="v8-growth standard">
+                <span class="v8-badge-inline">Popular</span>
+                <div class="v8-name">Growth</div>
+                <div class="v8-price">$2,997 <span>/mo</span></div>
+                <ul class="v8-list">
+                    <li>Async support via Email & Telegram</li>
+                    <li>Full audits included</li>
+                    <li>Weekly check-ins</li>
+                </ul>
+                <span class="v8-cta">Start Now</span>
+                <div class="v8-note">3 clients max</div>
+            </a>
+            <a href="#" class="v8-growth premium">
+                <span class="v8-badge-inline">Premium</span>
+                <div class="v8-name">Enterprise</div>
+                <div class="v8-price">$9,990 <span>/mo</span></div>
+                <ul class="v8-list">
+                    <li>Everything in Growth</li>
+                    <li>Weekly 45-min calls</li>
+                    <li>Hands-on implementation</li>
+                </ul>
+                <span class="v8-cta">Start Now</span>
+                <div class="v8-note">1-2 clients only</div>
+            </a>
+        </div>
+    </div>
+</div>
+
+</body>
+</html>
