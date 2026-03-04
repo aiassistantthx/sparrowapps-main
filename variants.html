@@ -1,0 +1,419 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Layout Variants Comparison</title>
+    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body {
+            font-family: 'Space Grotesk', -apple-system, sans-serif;
+            background: #e5e5e5;
+            color: #1a1a1a;
+            line-height: 1.5;
+            padding: 40px 20px;
+        }
+        .variant {
+            max-width: 760px;
+            margin: 0 auto 60px;
+            background: #FAF9F7;
+            border-radius: 20px;
+            padding: 40px;
+        }
+        .variant-label {
+            background: #1a1a1a;
+            color: #fff;
+            padding: 8px 16px;
+            border-radius: 8px;
+            font-size: 14px;
+            font-weight: 700;
+            margin-bottom: 24px;
+            display: inline-block;
+        }
+
+        /* Common styles */
+        .app-icon {
+            width: 44px;
+            height: 44px;
+            border-radius: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 16px;
+            font-weight: 700;
+            color: #fff;
+            flex-shrink: 0;
+        }
+        .app-icon.orange { background: linear-gradient(135deg, #f97316, #fb923c); }
+        .app-icon.teal { background: linear-gradient(135deg, #14b8a6, #2dd4bf); }
+        .app-icon.violet { background: linear-gradient(135deg, #8b5cf6, #a78bfa); }
+        .metric { font-size: 14px; font-weight: 700; color: #16a34a; }
+
+        /* ===== VARIANT 1: Bento Grid ===== */
+        .v1-bento {
+            display: grid;
+            grid-template-columns: 2fr 1fr;
+            grid-template-rows: auto auto;
+            gap: 12px;
+        }
+        .v1-card {
+            background: #fff;
+            border-radius: 16px;
+            padding: 20px;
+            text-decoration: none;
+            color: inherit;
+            display: flex;
+            align-items: center;
+            gap: 14px;
+            transition: transform 0.2s;
+        }
+        .v1-card:hover { transform: translateY(-2px); box-shadow: 0 6px 20px rgba(0,0,0,0.08); }
+        .v1-card.main {
+            grid-row: span 2;
+            flex-direction: column;
+            align-items: flex-start;
+            justify-content: center;
+            padding: 32px;
+        }
+        .v1-card.main .app-icon { width: 64px; height: 64px; font-size: 24px; margin-bottom: 12px; }
+        .v1-card.main .name { font-size: 24px; font-weight: 700; }
+        .v1-card.main .desc { font-size: 14px; color: #666; margin-top: 4px; }
+        .v1-card.main .metric { font-size: 18px; margin-top: 12px; }
+        .v1-card .name { font-size: 16px; font-weight: 600; }
+        .v1-card .desc { font-size: 12px; color: #666; }
+        .v1-card .content { flex: 1; }
+        .v1-card svg { width: 22px; height: 22px; flex-shrink: 0; }
+
+        /* ===== VARIANT 2: Compact List ===== */
+        .v2-list {
+            display: flex;
+            flex-direction: column;
+            gap: 8px;
+        }
+        .v2-item {
+            display: flex;
+            align-items: center;
+            gap: 14px;
+            padding: 14px 18px;
+            background: #fff;
+            border-radius: 12px;
+            text-decoration: none;
+            color: inherit;
+            transition: background 0.2s;
+        }
+        .v2-item:hover { background: #f5f5f5; }
+        .v2-item .icon {
+            width: 36px;
+            height: 36px;
+            border-radius: 8px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 14px;
+            font-weight: 700;
+            color: #fff;
+        }
+        .v2-item svg { width: 20px; height: 20px; }
+        .v2-item .name { font-size: 15px; font-weight: 600; flex: 1; }
+        .v2-item .metric { font-size: 13px; }
+
+        /* ===== VARIANT 3: Horizontal Scroll ===== */
+        .v3-scroll {
+            display: flex;
+            gap: 12px;
+            overflow-x: auto;
+            padding-bottom: 8px;
+            -webkit-overflow-scrolling: touch;
+        }
+        .v3-scroll::-webkit-scrollbar { height: 6px; }
+        .v3-scroll::-webkit-scrollbar-thumb { background: #ccc; border-radius: 3px; }
+        .v3-card {
+            flex: 0 0 180px;
+            background: #fff;
+            border-radius: 14px;
+            padding: 20px;
+            text-decoration: none;
+            color: inherit;
+            text-align: center;
+            transition: transform 0.2s;
+        }
+        .v3-card:hover { transform: translateY(-2px); box-shadow: 0 6px 20px rgba(0,0,0,0.08); }
+        .v3-card .icon-wrap { margin-bottom: 12px; display: flex; justify-content: center; }
+        .v3-card svg { width: 28px; height: 28px; }
+        .v3-card .name { font-size: 15px; font-weight: 600; margin-bottom: 4px; }
+        .v3-card .desc { font-size: 12px; color: #666; }
+        .v3-card .metric { margin-top: 8px; font-size: 13px; }
+
+        /* ===== VARIANT 4: Separated (Pills + Cards) ===== */
+        .v4-links {
+            display: flex;
+            gap: 12px;
+            margin-bottom: 20px;
+        }
+        .v4-link {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            padding: 14px 20px;
+            background: #fff;
+            border-radius: 12px;
+            text-decoration: none;
+            color: inherit;
+            flex: 1;
+            transition: transform 0.2s;
+        }
+        .v4-link:hover { transform: translateY(-2px); box-shadow: 0 4px 12px rgba(0,0,0,0.06); }
+        .v4-link svg { width: 20px; height: 20px; }
+        .v4-link .name { font-size: 15px; font-weight: 600; }
+        .v4-apps {
+            display: flex;
+            gap: 12px;
+        }
+        .v4-app {
+            flex: 1;
+            background: #fff;
+            border-radius: 14px;
+            padding: 18px;
+            text-decoration: none;
+            color: inherit;
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            transition: transform 0.2s;
+        }
+        .v4-app:hover { transform: translateY(-2px); box-shadow: 0 6px 20px rgba(0,0,0,0.08); }
+        .v4-app .content { flex: 1; }
+        .v4-app .name { font-size: 15px; font-weight: 600; }
+        .v4-app .metric { font-size: 13px; }
+
+        /* ===== VARIANT 5: Pills Top + App Cards ===== */
+        .v5-pills {
+            display: flex;
+            gap: 10px;
+            margin-bottom: 20px;
+        }
+        .v5-pill {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            padding: 10px 18px;
+            background: #1a1a1a;
+            color: #fff;
+            border-radius: 100px;
+            text-decoration: none;
+            font-size: 14px;
+            font-weight: 500;
+            transition: background 0.2s;
+        }
+        .v5-pill:hover { background: #333; }
+        .v5-pill svg { width: 16px; height: 16px; }
+        .v5-apps {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 12px;
+        }
+        .v5-app {
+            background: #fff;
+            border-radius: 14px;
+            padding: 20px;
+            text-decoration: none;
+            color: inherit;
+            text-align: center;
+            transition: transform 0.2s;
+        }
+        .v5-app:hover { transform: translateY(-2px); box-shadow: 0 6px 20px rgba(0,0,0,0.08); }
+        .v5-app .app-icon { margin: 0 auto 12px; }
+        .v5-app .name { font-size: 15px; font-weight: 600; margin-bottom: 4px; }
+        .v5-app .desc { font-size: 12px; color: #666; margin-bottom: 8px; }
+        .v5-app .metric { font-size: 13px; }
+    </style>
+</head>
+<body>
+
+<!-- VARIANT 1: Bento Grid -->
+<div class="variant">
+    <span class="variant-label">1. Bento-сетка</span>
+    <div class="v1-bento">
+        <a href="#" class="v1-card main">
+            <div class="app-icon orange">O</div>
+            <div class="name">OpenChat</div>
+            <div class="desc">AI chatbot with GPT-4, Claude, Gemini and all top LLMs in one app</div>
+            <span class="metric">$1.2M ARR</span>
+        </a>
+        <a href="#" class="v1-card">
+            <svg fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/></svg>
+            <div class="content">
+                <div class="name">Newsletter</div>
+                <div class="desc">Weekly tips</div>
+            </div>
+        </a>
+        <a href="#" class="v1-card">
+            <svg viewBox="0 0 24 24" fill="currentColor"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>
+            <div class="content">
+                <div class="name">Twitter</div>
+                <div class="desc">Daily thoughts</div>
+            </div>
+        </a>
+        <a href="#" class="v1-card">
+            <div class="app-icon teal" style="width:36px;height:36px;font-size:14px;">L</div>
+            <div class="content">
+                <div class="name">LocalizeShots</div>
+            </div>
+        </a>
+        <a href="#" class="v1-card">
+            <div class="app-icon violet" style="width:36px;height:36px;font-size:14px;">V</div>
+            <div class="content">
+                <div class="name">AI Video</div>
+            </div>
+            <span class="metric">$500/m</span>
+        </a>
+    </div>
+</div>
+
+<!-- VARIANT 2: Compact List -->
+<div class="variant">
+    <span class="variant-label">2. Компактный список</span>
+    <div class="v2-list">
+        <a href="#" class="v2-item">
+            <svg fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/></svg>
+            <span class="name">Newsletter</span>
+        </a>
+        <a href="#" class="v2-item">
+            <svg viewBox="0 0 24 24" fill="currentColor"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>
+            <span class="name">Twitter</span>
+        </a>
+        <a href="#" class="v2-item">
+            <div class="icon" style="background: linear-gradient(135deg, #f97316, #fb923c);">O</div>
+            <span class="name">OpenChat</span>
+            <span class="metric">$1.2M ARR</span>
+        </a>
+        <a href="#" class="v2-item">
+            <div class="icon" style="background: linear-gradient(135deg, #14b8a6, #2dd4bf);">L</div>
+            <span class="name">LocalizeShots</span>
+        </a>
+        <a href="#" class="v2-item">
+            <div class="icon" style="background: linear-gradient(135deg, #8b5cf6, #a78bfa);">V</div>
+            <span class="name">AI Video App</span>
+            <span class="metric">$500/m</span>
+        </a>
+    </div>
+</div>
+
+<!-- VARIANT 3: Horizontal Scroll -->
+<div class="variant">
+    <span class="variant-label">3. Горизонтальный скролл</span>
+    <div class="v3-scroll">
+        <a href="#" class="v3-card">
+            <div class="icon-wrap">
+                <svg fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/></svg>
+            </div>
+            <div class="name">Newsletter</div>
+            <div class="desc">Weekly tips</div>
+        </a>
+        <a href="#" class="v3-card">
+            <div class="icon-wrap">
+                <svg viewBox="0 0 24 24" fill="currentColor"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>
+            </div>
+            <div class="name">Twitter</div>
+            <div class="desc">Daily thoughts</div>
+        </a>
+        <a href="#" class="v3-card">
+            <div class="icon-wrap">
+                <div class="app-icon orange">O</div>
+            </div>
+            <div class="name">OpenChat</div>
+            <div class="desc">AI Chatbot</div>
+            <span class="metric">$1.2M ARR</span>
+        </a>
+        <a href="#" class="v3-card">
+            <div class="icon-wrap">
+                <div class="app-icon teal">L</div>
+            </div>
+            <div class="name">LocalizeShots</div>
+            <div class="desc">Screenshots</div>
+        </a>
+        <a href="#" class="v3-card">
+            <div class="icon-wrap">
+                <div class="app-icon violet">V</div>
+            </div>
+            <div class="name">AI Video</div>
+            <div class="desc">Stealth</div>
+            <span class="metric">$500/m</span>
+        </a>
+    </div>
+</div>
+
+<!-- VARIANT 4: Separated -->
+<div class="variant">
+    <span class="variant-label">4. Разделенный (Links + Apps)</span>
+    <div class="v4-links">
+        <a href="#" class="v4-link">
+            <svg fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/></svg>
+            <span class="name">Newsletter</span>
+        </a>
+        <a href="#" class="v4-link">
+            <svg viewBox="0 0 24 24" fill="currentColor"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>
+            <span class="name">Twitter</span>
+        </a>
+    </div>
+    <div class="v4-apps">
+        <a href="#" class="v4-app">
+            <div class="app-icon orange">O</div>
+            <div class="content">
+                <div class="name">OpenChat</div>
+            </div>
+            <span class="metric">$1.2M ARR</span>
+        </a>
+        <a href="#" class="v4-app">
+            <div class="app-icon teal">L</div>
+            <div class="content">
+                <div class="name">LocalizeShots</div>
+            </div>
+        </a>
+        <a href="#" class="v4-app">
+            <div class="app-icon violet">V</div>
+            <div class="content">
+                <div class="name">AI Video</div>
+            </div>
+            <span class="metric">$500/m</span>
+        </a>
+    </div>
+</div>
+
+<!-- VARIANT 5: Pills + Cards -->
+<div class="variant">
+    <span class="variant-label">5. Pills + Cards</span>
+    <div class="v5-pills">
+        <a href="#" class="v5-pill">
+            <svg fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/></svg>
+            Newsletter
+        </a>
+        <a href="#" class="v5-pill">
+            <svg viewBox="0 0 24 24" fill="currentColor"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>
+            Twitter
+        </a>
+    </div>
+    <div class="v5-apps">
+        <a href="#" class="v5-app">
+            <div class="app-icon orange">O</div>
+            <div class="name">OpenChat</div>
+            <div class="desc">AI Chatbot</div>
+            <span class="metric">$1.2M ARR</span>
+        </a>
+        <a href="#" class="v5-app">
+            <div class="app-icon teal">L</div>
+            <div class="name">LocalizeShots</div>
+            <div class="desc">Screenshots</div>
+        </a>
+        <a href="#" class="v5-app">
+            <div class="app-icon violet">V</div>
+            <div class="name">AI Video</div>
+            <div class="desc">Stealth</div>
+            <span class="metric">$500/m</span>
+        </a>
+    </div>
+</div>
+
+</body>
+</html>

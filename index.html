@@ -1,0 +1,731 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ivan Vorobyev — App Growth</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Space Grotesk', -apple-system, sans-serif;
+            background: #FAF9F7;
+            color: #1a1a1a;
+            line-height: 1.5;
+        }
+
+        .container {
+            max-width: 760px;
+            margin: 0 auto;
+            padding: 72px 24px;
+        }
+
+        /* Hero */
+        .hero {
+            display: flex;
+            align-items: center;
+            gap: 28px;
+            margin-bottom: 36px;
+        }
+
+        .photo {
+            width: 96px;
+            height: 96px;
+            border-radius: 50%;
+            object-fit: cover;
+            flex-shrink: 0;
+        }
+
+        .hero-content h1 {
+            font-size: 32px;
+            font-weight: 700;
+            line-height: 1.2;
+            margin-bottom: 6px;
+        }
+
+        .hero-content h1 span {
+            background: linear-gradient(135deg, #f97316, #ec4899);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .hero-content p {
+            font-size: 17px;
+            color: #666;
+        }
+
+        /* Bento Grid */
+        .bento-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            grid-template-rows: auto auto;
+            gap: 12px;
+            margin-bottom: 48px;
+            align-items: stretch;
+        }
+
+        .bento-card {
+            background: #fff;
+            border-radius: 16px;
+            padding: 20px;
+            text-decoration: none;
+            color: inherit;
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            transition: transform 0.2s, box-shadow 0.2s;
+        }
+
+        .bento-card:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(0,0,0,0.08);
+        }
+
+        .bento-card.main {
+            padding: 28px;
+            flex-direction: column;
+            align-items: flex-start;
+            justify-content: center;
+        }
+
+        .bento-card.main .bento-header {
+            display: flex;
+            align-items: center;
+            gap: 14px;
+            width: 100%;
+        }
+
+        .bento-card.main .bento-icon-img {
+            width: 52px;
+            height: 52px;
+            border-radius: 12px;
+            flex-shrink: 0;
+        }
+
+        .bento-card.main .bento-name {
+            font-size: 22px;
+        }
+
+        .bento-card.main .bento-metric {
+            margin-left: auto;
+            font-size: 18px;
+        }
+
+        .bento-card.main .bento-desc {
+            font-size: 14px;
+            line-height: 1.5;
+            margin-top: 16px;
+        }
+
+        .bento-right-col {
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+        }
+
+        .bento-right-col .bento-card {
+            flex: 1 1 0;
+            min-height: 0;
+        }
+
+        .bento-icon {
+            width: 38px;
+            height: 38px;
+            border-radius: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 14px;
+            font-weight: 700;
+            color: #fff;
+            flex-shrink: 0;
+        }
+
+        .bento-icon.teal { background: linear-gradient(135deg, #14b8a6, #2dd4bf); }
+        .bento-icon.violet { background: linear-gradient(135deg, #8b5cf6, #a78bfa); }
+
+        .bento-card svg {
+            width: 20px;
+            height: 20px;
+            flex-shrink: 0;
+        }
+
+        .bento-content {
+            flex: 1;
+            min-width: 0;
+        }
+
+        .bento-name {
+            font-size: 15px;
+            font-weight: 600;
+        }
+
+        .bento-desc {
+            font-size: 12px;
+            color: #666;
+            margin-top: 2px;
+        }
+
+        .bento-metric {
+            font-size: 14px;
+            font-weight: 700;
+            color: #16a34a;
+            flex-shrink: 0;
+        }
+
+        .bento-bottom {
+            grid-column: span 2;
+            display: flex;
+            gap: 12px;
+        }
+
+        .bento-bottom .bento-card {
+            flex: 1;
+        }
+
+        /* Section */
+        .section {
+            margin-bottom: 48px;
+        }
+
+        .section-title {
+            font-size: 20px;
+            font-weight: 700;
+            margin-bottom: 20px;
+            color: #1a1a1a;
+        }
+
+        /* Services Section */
+        .services-section {
+            display: flex;
+            gap: 12px;
+        }
+
+        .services-label {
+            writing-mode: vertical-rl;
+            text-orientation: mixed;
+            transform: rotate(180deg);
+            font-size: 11px;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            color: #fff;
+            padding: 16px 8px;
+            border-radius: 8px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .services-label.audits {
+            background: linear-gradient(180deg, #3b82f6, #1d4ed8);
+        }
+
+        .services-label.growth-label {
+            background: linear-gradient(180deg, #f97316, #ea580c);
+        }
+
+        .services-column {
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+        }
+
+        /* Audits Grid */
+        .audits-grid {
+            display: flex;
+            border-radius: 16px;
+            overflow: visible;
+        }
+
+        .audit-box {
+            flex: 1;
+            padding: 20px 24px 28px;
+            text-decoration: none;
+            color: inherit;
+            border-radius: 0;
+            transition: transform 0.2s, box-shadow 0.2s;
+            display: flex;
+            flex-direction: column;
+            background: #fff;
+        }
+
+        .audit-box:first-child {
+            border-radius: 16px 0 0 16px;
+        }
+
+        .audit-box:last-child {
+            border-radius: 0 16px 16px 0;
+        }
+
+        .audit-box:hover {
+            transform: scale(1.03);
+            box-shadow: 0 8px 24px rgba(0,0,0,0.1);
+            z-index: 2;
+        }
+
+        .audit-box.ads {
+            background: linear-gradient(135deg, #eff6ff, #dbeafe);
+            color: #1a1a1a;
+            border: 1px solid #bfdbfe;
+            border-right: none;
+        }
+
+        .audit-box.product {
+            background: linear-gradient(135deg, #faf5ff, #f3e8ff);
+            color: #1a1a1a;
+            border: 1px solid #e9d5ff;
+            border-right: none;
+            border-left: none;
+        }
+
+        .audit-box.bundle {
+            background: linear-gradient(135deg, #059669, #10b981);
+            color: #fff;
+            position: relative;
+            overflow: visible;
+        }
+
+        .audit-box.ads .audit-cta,
+        .audit-box.product .audit-cta {
+            background: #1a1a1a;
+            color: #fff;
+        }
+
+        .audit-box.ads .audit-list,
+        .audit-box.product .audit-list {
+            opacity: 0.6;
+        }
+
+        .audit-header {
+            min-height: 20px;
+            margin-bottom: 4px;
+        }
+
+        .audit-box.bundle:hover {
+            transform: scale(1.03);
+            box-shadow: 0 8px 24px rgba(0,0,0,0.15);
+        }
+
+        .audit-name {
+            font-size: 18px;
+            font-weight: 700;
+            margin-bottom: 6px;
+        }
+
+        .audit-price {
+            font-size: 32px;
+            font-weight: 700;
+            margin-bottom: 10px;
+        }
+
+        .audit-desc {
+            font-size: 13px;
+            opacity: 0.7;
+            margin-bottom: 16px;
+            line-height: 1.4;
+        }
+
+        .audit-list {
+            list-style: none;
+            font-size: 14px;
+            opacity: 0.8;
+            margin-bottom: 20px;
+            line-height: 1.6;
+            flex-grow: 1;
+        }
+
+        .audit-list li {
+            padding-left: 16px;
+            position: relative;
+            margin-bottom: 6px;
+        }
+
+        .audit-list li::before {
+            content: "•";
+            position: absolute;
+            left: 0;
+        }
+
+        .audit-cta {
+            display: inline-block;
+            padding: 12px 24px;
+            background: #1a1a1a;
+            color: #fff;
+            border-radius: 8px;
+            font-size: 16px;
+            font-weight: 600;
+            text-decoration: none;
+            margin-top: auto;
+        }
+
+        .audit-box.bundle .audit-cta {
+            background: #fff;
+            color: #059669;
+        }
+
+        .audit-badge {
+            position: absolute;
+            top: -14px;
+            right: 20px;
+            font-size: 14px;
+            font-weight: 700;
+            padding: 10px 18px;
+            background: #fbbf24;
+            color: #1a1a1a;
+            border-radius: 8px;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+            transform: rotate(2deg);
+        }
+
+        /* Growth Grid */
+        .growth-grid {
+            display: flex;
+            gap: 12px;
+        }
+
+        .growth-box {
+            flex: 1;
+            padding: 28px 24px;
+            border-radius: 16px;
+            text-decoration: none;
+            color: #fff;
+            transition: transform 0.2s, box-shadow 0.2s;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .growth-box:hover {
+            transform: scale(1.03);
+            box-shadow: 0 8px 24px rgba(0,0,0,0.2);
+        }
+
+        .growth-box.standard {
+            background: linear-gradient(135deg, #1a1a1a, #333);
+        }
+
+        .growth-box.premium {
+            background: linear-gradient(135deg, #7c3aed, #5b21b6);
+        }
+
+        .growth-badge {
+            display: inline-block;
+            font-size: 12px;
+            font-weight: 700;
+            padding: 6px 12px;
+            background: #f97316;
+            color: #fff;
+            border-radius: 6px;
+            margin-bottom: 14px;
+        }
+
+        .growth-box.premium .growth-badge {
+            background: #fbbf24;
+            color: #1a1a1a;
+        }
+
+        .growth-name {
+            font-size: 24px;
+            font-weight: 700;
+            margin-bottom: 6px;
+        }
+
+        .growth-price {
+            font-size: 38px;
+            font-weight: 700;
+            margin-bottom: 12px;
+        }
+
+        .growth-price span {
+            font-size: 16px;
+            font-weight: 500;
+            opacity: 0.6;
+        }
+
+        .growth-desc {
+            font-size: 14px;
+            opacity: 0.75;
+            margin-bottom: 20px;
+            line-height: 1.5;
+        }
+
+        .growth-list {
+            list-style: none;
+            font-size: 15px;
+            opacity: 0.85;
+            margin-bottom: 24px;
+            line-height: 1.7;
+            flex-grow: 1;
+        }
+
+        .growth-list li {
+            padding-left: 18px;
+            position: relative;
+            margin-bottom: 8px;
+        }
+
+        .growth-list li::before {
+            content: "✓";
+            position: absolute;
+            left: 0;
+            opacity: 0.7;
+        }
+
+        .growth-cta {
+            display: inline-block;
+            padding: 14px 28px;
+            background: #fff;
+            color: #1a1a1a;
+            border-radius: 8px;
+            font-size: 17px;
+            font-weight: 600;
+            text-decoration: none;
+        }
+
+        .growth-note {
+            font-size: 13px;
+            opacity: 0.5;
+            margin-top: 16px;
+        }
+
+        /* Footer */
+        .footer {
+            text-align: center;
+            padding-top: 32px;
+            color: #999;
+            font-size: 14px;
+        }
+
+        .footer a {
+            color: #1a1a1a;
+            font-weight: 500;
+        }
+
+        /* Mobile */
+        @media (max-width: 700px) {
+            .container {
+                padding: 48px 20px;
+            }
+
+            .hero {
+                flex-direction: column;
+                text-align: center;
+            }
+
+            .bento-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .bento-card.main {
+                grid-row: span 1;
+            }
+
+            .bento-bottom {
+                grid-column: span 1;
+                flex-direction: column;
+            }
+
+            .services-section {
+                flex-direction: column;
+            }
+
+            .services-label {
+                writing-mode: horizontal-tb;
+                transform: none;
+                padding: 10px 16px;
+            }
+
+            .audits-grid {
+                flex-direction: column;
+            }
+
+            .audit-box:first-child {
+                border-radius: 16px 16px 0 0;
+            }
+
+            .audit-box:last-child {
+                border-radius: 0 0 16px 16px;
+            }
+
+            .audit-box.ads {
+                border-right: 1px solid #bfdbfe;
+                border-bottom: none;
+            }
+
+            .audit-box.product {
+                border: 1px solid #e9d5ff;
+                border-top: none;
+                border-bottom: none;
+            }
+
+            .growth-grid {
+                flex-direction: column;
+            }
+
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <!-- Hero -->
+        <section class="hero">
+            <img src="photo.jpg" alt="Ivan" class="photo">
+            <div class="hero-content">
+                <h1>Building apps, <span>scaling with ads</span></h1>
+                <p>Weekly tips on app growth & marketing. 4K+ subscribers.</p>
+            </div>
+        </section>
+
+        <!-- Bento Grid -->
+        <section class="bento-grid">
+            <!-- OpenChat (left, spans 2 rows) -->
+            <a href="https://apps.apple.com/us/app/openchat-ai-chatbot-copilot/id6448482829" class="bento-card main" target="_blank">
+                <div class="bento-header">
+                    <img src="openchat-icon.webp" alt="OpenChat" class="bento-icon-img">
+                    <span class="bento-name">OpenChat</span>
+                    <span class="bento-metric">$1.2M ARR</span>
+                </div>
+                <span class="bento-desc">AI chatbot with GPT-4, Claude, Gemini and all top LLMs in one app. Available on iOS and macOS.</span>
+            </a>
+            <!-- Right column wrapper -->
+            <div class="bento-right-col">
+                <a href="https://newsletter.sparrowapps.io" class="bento-card">
+                    <svg fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/></svg>
+                    <div class="bento-content">
+                        <span class="bento-name">Newsletter</span>
+                        <span class="bento-desc">Weekly tips on app growth · 3K subscribers</span>
+                    </div>
+                </a>
+                <a href="https://x.com/ivesparrowai" class="bento-card" target="_blank">
+                    <svg viewBox="0 0 24 24" fill="currentColor"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>
+                    <div class="bento-content">
+                        <span class="bento-name">Twitter</span>
+                        <span class="bento-desc">Daily thoughts on apps & ads · 2.5K followers</span>
+                    </div>
+                </a>
+            </div>
+            <!-- Bottom row: LocalizeShots + AI Video -->
+            <div class="bento-bottom">
+                <a href="https://localizeshots.com" class="bento-card" target="_blank">
+                    <div class="bento-icon teal">L</div>
+                    <div class="bento-content">
+                        <span class="bento-name">LocalizeShots</span>
+                        <span class="bento-desc">App Store screenshots in 40+ languages in 2 min</span>
+                    </div>
+                </a>
+                <a href="#" class="bento-card">
+                    <div class="bento-icon violet">V</div>
+                    <div class="bento-content">
+                        <span class="bento-name">AI Video App</span>
+                        <span class="bento-desc">iOS video generation. Stealth.</span>
+                    </div>
+                    <span class="bento-metric">$500/m</span>
+                </a>
+            </div>
+        </section>
+
+        <!-- Services -->
+        <section class="section">
+            <h2 class="section-title">Work With Me</h2>
+
+            <!-- Audits -->
+            <div class="services-section" style="margin-bottom: 12px;">
+                <div class="services-label audits">Audits</div>
+                <div class="audits-grid">
+                    <a href="https://buy.stripe.com/cNi8wP5CRdltc6tbSmfMA00" class="audit-box ads">
+                        <div class="audit-header"></div>
+                        <div class="audit-name">Ads Audit</div>
+                        <div class="audit-price">$497</div>
+                        <ul class="audit-list">
+                            <li>Apple Ads or Meta Ads</li>
+                            <li>Account structure review</li>
+                            <li>Keyword & targeting analysis</li>
+                            <li>Budget optimization tips</li>
+                            <li>Loom or PDF/Notion</li>
+                        </ul>
+                        <span class="audit-cta">Buy Now</span>
+                    </a>
+                    <a href="https://buy.stripe.com/3cI00j9T72GP1rPg8CfMA04" class="audit-box product">
+                        <div class="audit-header"></div>
+                        <div class="audit-name">Product Audit</div>
+                        <div class="audit-price">$597</div>
+                        <ul class="audit-list">
+                            <li>Monetization strategy</li>
+                            <li>Paywall & pricing review</li>
+                            <li>Conversion funnel analysis</li>
+                            <li>Onboarding UX feedback</li>
+                            <li>Loom or PDF/Notion</li>
+                        </ul>
+                        <span class="audit-cta">Buy Now</span>
+                    </a>
+                    <a href="https://buy.stripe.com/bJe14n9T7bdl5I5aOifMA03" class="audit-box bundle">
+                        <span class="audit-badge">Save $97</span>
+                        <div class="audit-header"></div>
+                        <div class="audit-name">Full Audit</div>
+                        <div class="audit-price">$997</div>
+                        <ul class="audit-list">
+                            <li>Ads + Product combined</li>
+                            <li>Full-stack app review</li>
+                            <li>Growth roadmap</li>
+                            <li>Priority recommendations</li>
+                            <li>Loom or PDF/Notion</li>
+                        </ul>
+                        <span class="audit-cta">Buy Now</span>
+                    </a>
+                </div>
+            </div>
+
+            <!-- Growth -->
+            <div class="services-section">
+                <div class="services-label growth-label">Growth</div>
+                <div class="services-column">
+                    <div class="growth-grid">
+                        <a href="https://buy.stripe.com/5kQ3cvaXb4OXb2p2hMfMA02" class="growth-box standard">
+                            <span class="growth-badge">Popular</span>
+                            <div class="growth-name">Growth</div>
+                            <div class="growth-price">$2,997 <span>/mo</span></div>
+                            <ul class="growth-list">
+                                <li>Async support via Email & Telegram</li>
+                                <li>Full ads & product audits included</li>
+                                <li>Creative strategy & ad copy</li>
+                                <li>Growth roadmap & priorities</li>
+                                <li>Weekly async check-ins</li>
+                                <li>Unlimited questions</li>
+                            </ul>
+                            <span class="growth-cta">Start Now</span>
+                            <div class="growth-note">3 clients max · Plan for 3+ months</div>
+                        </a>
+                        <a href="https://buy.stripe.com/14AcN52qFa9h3zXf4yfMA01" class="growth-box premium">
+                            <span class="growth-badge">Premium</span>
+                            <div class="growth-name">Enterprise</div>
+                            <div class="growth-price">$9,990 <span>/mo</span></div>
+                            <ul class="growth-list">
+                                <li>Everything in Growth</li>
+                                <li>Weekly 45-min video calls</li>
+                                <li>Screen-share work sessions</li>
+                                <li>Direct Telegram access</li>
+                                <li>Hands-on implementation help</li>
+                            </ul>
+                            <span class="growth-cta">Start Now</span>
+                            <div class="growth-note">1-2 clients only</div>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Footer -->
+        <footer class="footer">
+            <p>Based in Bali · <a href="mailto:ivan@sparrowapps.io">ivan@sparrowapps.io</a></p>
+        </footer>
+    </div>
+</body>
+</html>
