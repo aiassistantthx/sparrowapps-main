@@ -15,7 +15,7 @@
 
         body {
             font-family: 'Space Grotesk', -apple-system, sans-serif;
-            background: #FAF9F7;
+            background: #fff;
             color: #1a1a1a;
             line-height: 1.5;
         }
@@ -23,7 +23,25 @@
         .container {
             max-width: 760px;
             margin: 0 auto;
-            padding: 72px 24px;
+        }
+
+        /* Section backgrounds */
+        .section-hero {
+            background: #fff;
+            padding: 72px 24px 48px;
+        }
+        .section-projects {
+            background: #faf8f5;
+            padding: 48px 24px;
+        }
+        .section-services {
+            background: #fff;
+            padding: 48px 24px;
+        }
+        .section-faq {
+            background: #fff;
+            padding: 48px 24px 72px;
+            border-top: 1px solid #eee;
         }
 
         /* Hero */
@@ -31,7 +49,7 @@
             display: flex;
             align-items: center;
             gap: 28px;
-            margin-bottom: 36px;
+            margin-bottom: 24px;
         }
 
         .photo {
@@ -43,7 +61,7 @@
         }
 
         .hero-content h1 {
-            font-size: 32px;
+            font-size: 38px;
             font-weight: 700;
             line-height: 1.2;
             margin-bottom: 6px;
@@ -57,39 +75,35 @@
         }
 
         .hero-content p {
-            font-size: 17px;
+            font-size: 19px;
             color: #666;
         }
 
-        /* Bento Grid */
+        /* Bento Grid - Minimal */
         .bento-grid {
             display: grid;
             grid-template-columns: 1fr 1fr;
-            grid-template-rows: auto auto;
             gap: 12px;
-            margin-bottom: 48px;
-            align-items: stretch;
         }
 
         .bento-card {
             background: #fff;
-            border-radius: 16px;
+            border-radius: 12px;
             padding: 20px;
             text-decoration: none;
             color: inherit;
             display: flex;
             align-items: center;
             gap: 12px;
-            transition: transform 0.2s, box-shadow 0.2s;
+            transition: box-shadow 0.2s;
         }
 
         .bento-card:hover {
-            transform: translateY(-2px);
-            box-shadow: 0 6px 20px rgba(0,0,0,0.08);
+            box-shadow: 0 4px 12px rgba(0,0,0,0.06);
         }
 
         .bento-card.main {
-            padding: 28px;
+            padding: 24px;
             flex-direction: column;
             align-items: flex-start;
             justify-content: center;
@@ -110,16 +124,16 @@
         }
 
         .bento-card.main .bento-name {
-            font-size: 22px;
+            font-size: 26px;
         }
 
         .bento-card.main .bento-metric {
             margin-left: auto;
-            font-size: 18px;
+            font-size: 20px;
         }
 
         .bento-card.main .bento-desc {
-            font-size: 14px;
+            font-size: 16px;
             line-height: 1.5;
             margin-top: 16px;
         }
@@ -131,8 +145,7 @@
         }
 
         .bento-right-col .bento-card {
-            flex: 1 1 0;
-            min-height: 0;
+            flex: 1;
         }
 
         .bento-icon {
@@ -163,18 +176,18 @@
         }
 
         .bento-name {
-            font-size: 15px;
+            font-size: 17px;
             font-weight: 600;
         }
 
         .bento-desc {
-            font-size: 12px;
+            font-size: 14px;
             color: #666;
             margin-top: 2px;
         }
 
         .bento-metric {
-            font-size: 14px;
+            font-size: 16px;
             font-weight: 700;
             color: #16a34a;
             flex-shrink: 0;
@@ -192,11 +205,10 @@
 
         /* Section */
         .section {
-            margin-bottom: 48px;
         }
 
         .section-title {
-            font-size: 20px;
+            font-size: 24px;
             font-weight: 700;
             margin-bottom: 20px;
             color: #1a1a1a;
@@ -204,10 +216,9 @@
 
         /* Intro */
         .services-intro {
-            font-size: 15px;
+            font-size: 17px;
             color: #666;
             line-height: 1.7;
-            margin-bottom: 32px;
         }
         .services-intro strong {
             color: #1a1a1a;
@@ -222,7 +233,7 @@
         }
 
         .services-section-label {
-            font-size: 11px;
+            font-size: 13px;
             font-weight: 600;
             text-transform: uppercase;
             letter-spacing: 1.5px;
@@ -256,13 +267,13 @@
             gap: 2px;
         }
         .service-name {
-            font-size: 16px;
+            font-size: 18px;
             font-weight: 600;
             color: #1a1a1a;
             transition: all 0.15s;
         }
         .service-desc {
-            font-size: 13px;
+            font-size: 15px;
             color: #999;
         }
         .service-right {
@@ -271,7 +282,7 @@
             gap: 12px;
         }
         .service-price {
-            font-size: 15px;
+            font-size: 17px;
             color: #666;
             font-weight: 500;
             white-space: nowrap;
@@ -282,7 +293,7 @@
             transition: transform 0.2s;
         }
         .service-tag {
-            font-size: 11px;
+            font-size: 13px;
             color: #10b981;
             margin-left: 8px;
             font-weight: 500;
@@ -290,12 +301,9 @@
 
         /* FAQ */
         .services-faq {
-            margin-top: 32px;
-            padding-top: 24px;
-            border-top: 1px solid #eee;
         }
         .faq-title {
-            font-size: 14px;
+            font-size: 16px;
             font-weight: 600;
             color: #999;
             text-transform: uppercase;
@@ -309,13 +317,13 @@
             margin-bottom: 0;
         }
         .faq-q {
-            font-size: 14px;
+            font-size: 16px;
             font-weight: 600;
             color: #1a1a1a;
             margin-bottom: 4px;
         }
         .faq-a {
-            font-size: 14px;
+            font-size: 16px;
             color: #666;
             line-height: 1.5;
         }
@@ -366,30 +374,35 @@
                 padding: 12px 0;
             }
             .service-name {
-                font-size: 15px;
+                font-size: 17px;
             }
             .service-desc {
-                font-size: 12px;
+                font-size: 14px;
             }
         }
     </style>
 </head>
 <body>
-    <div class="container">
-        <!-- Hero -->
-        <section class="hero">
-            <img src="photo.jpg" alt="Ivan" class="photo">
-            <div class="hero-content">
-                <h1>Building apps, <span>scaling with ads</span></h1>
-            </div>
-        </section>
+    <!-- Hero Section -->
+    <div class="section-hero">
+        <div class="container">
+            <section class="hero">
+                <img src="photo.jpg" alt="Ivan" class="photo">
+                <div class="hero-content">
+                    <h1>Building apps, <span>scaling with ads</span></h1>
+                </div>
+            </section>
 
-        <p class="services-intro">
-            <strong>Hi, I'm Ivan Sparrow.</strong> 15+ years in marketing — from in-house roles managing multi-million dollar budgets in e-commerce, foodtech, games, health & fitness, and utilities to my own business. I built my own app and grew it to $1.2M ARR. My focus is growth: paid ads, monetization, onboarding, paywalls, and offers. I work best where there's data to make decisions. I've also spent a lot of time on strategic marketing — audience research, financial modeling, branding, and GTM strategy.
-        </p>
+            <p class="services-intro">
+                <strong>Hi, I'm Ivan Sparrow.</strong> 15+ years in marketing — from in-house roles managing multi-million dollar budgets in e-commerce, foodtech, games, health & fitness, and utilities to my own business.
+            </p>
+        </div>
+    </div>
 
-        <!-- Bento Grid -->
-        <section class="bento-grid">
+    <!-- Projects Section -->
+    <div class="section-projects">
+        <div class="container">
+            <section class="bento-grid">
             <!-- OpenChat (left, spans 2 rows) -->
             <a href="https://apps.apple.com/us/app/openchat-ai-chatbot-copilot/id6448482829" class="bento-card main" target="_blank">
                 <div class="bento-header">
@@ -435,10 +448,14 @@
                 </a>
             </div>
         </section>
+        </div>
+    </div>
 
-        <!-- Services -->
-        <section class="section">
+    <!-- Services Section -->
+    <div class="section-services">
+        <div class="container">
             <h2 class="section-title">Work With Me</h2>
+            <p class="services-intro" style="margin-bottom: 24px;">My focus is growth: paid ads, monetization, onboarding, paywalls, and offers. I work best where there's data to make decisions.</p>
 
             <div class="services-list">
                 <div class="services-section-label">One-time</div>
@@ -500,7 +517,12 @@
                     </div>
                 </a>
             </div>
+        </div>
+    </div>
 
+    <!-- FAQ Section -->
+    <div class="section-faq">
+        <div class="container">
             <div class="services-faq">
                 <div class="faq-title">FAQ</div>
 
@@ -524,8 +546,7 @@
                     <div class="faq-a">Probably not yet. Start with my <a href="/">free Apple Search Ads guide</a> — it covers the basics.</div>
                 </div>
             </div>
-        </section>
-
+        </div>
     </div>
 </body>
 </html>
