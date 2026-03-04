@@ -60,17 +60,6 @@
             font-size: 14px;
         }
 
-        /* ===== VARIANT 2: Simple Text Block ===== */
-        .v2-text {
-            font-size: 16px;
-            color: #666;
-            line-height: 1.8;
-        }
-        .v2-text a {
-            color: #1a1a1a;
-            font-weight: 500;
-        }
-
         /* ===== VARIANT 3: Compact Accordion Style ===== */
         .v3-list {
             display: flex;
@@ -138,44 +127,6 @@
             color: #666;
         }
 
-        /* ===== VARIANT 5: Single CTA Focus ===== */
-        .v5-block {
-            text-align: center;
-            padding: 40px;
-            background: #fff;
-            border-radius: 16px;
-        }
-        .v5-block h3 {
-            font-size: 22px;
-            margin-bottom: 12px;
-        }
-        .v5-block p {
-            color: #666;
-            font-size: 15px;
-            margin-bottom: 24px;
-            max-width: 400px;
-            margin-left: auto;
-            margin-right: auto;
-        }
-        .v5-cta {
-            display: inline-block;
-            background: #1a1a1a;
-            color: #fff;
-            padding: 14px 32px;
-            border-radius: 8px;
-            text-decoration: none;
-            font-weight: 600;
-        }
-        .v5-links {
-            margin-top: 20px;
-            font-size: 14px;
-            color: #666;
-        }
-        .v5-links a {
-            color: #1a1a1a;
-            margin: 0 8px;
-        }
-
         /* ===== VARIANT 6: Inline Subtle ===== */
         .v6-inline {
             font-size: 16px;
@@ -191,55 +142,685 @@
             font-size: 14px;
         }
 
-        /* ===== VARIANT 7: Cards but Muted ===== */
-        .v7-grid {
-            display: grid;
-            grid-template-columns: repeat(3, 1fr);
-            gap: 12px;
-            margin-bottom: 12px;
+        /* ===== NEW VARIANT: Expanded Minimalist ===== */
+        .vexp-list {
+            display: flex;
+            flex-direction: column;
+            gap: 0;
         }
-        .v7-card {
-            background: #fff;
-            border-radius: 12px;
-            padding: 20px;
-            text-decoration: none;
-            color: inherit;
-            border: 1px solid #eee;
-            transition: border-color 0.2s;
-        }
-        .v7-card:hover {
-            border-color: #ccc;
-        }
-        .v7-name {
-            font-weight: 600;
-            font-size: 15px;
-            margin-bottom: 4px;
-        }
-        .v7-price {
-            font-size: 18px;
-            font-weight: 700;
-            margin-bottom: 8px;
-        }
-        .v7-desc {
+        .vexp-divider {
             font-size: 12px;
             color: #999;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin: 20px 0 12px;
         }
-        .v7-row {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 12px;
+        .vexp-divider:first-child {
+            margin-top: 0;
         }
-        .v7-card.dark {
-            background: #1a1a1a;
-            color: #fff;
-            border: none;
+        .vexp-item {
+            display: block;
+            text-decoration: none;
+            color: inherit;
+            padding: 16px 0;
+            border-bottom: 1px solid #e5e5e5;
+            transition: background 0.2s;
         }
-        .v7-card.dark .v7-desc {
-            color: rgba(255,255,255,0.6);
+        .vexp-item:hover {
+            background: #f9f9f9;
+            margin: 0 -16px;
+            padding: 16px;
+        }
+        .vexp-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: baseline;
+            margin-bottom: 8px;
+        }
+        .vexp-name {
+            font-weight: 600;
+            font-size: 16px;
+        }
+        .vexp-price {
+            color: #666;
+            font-size: 15px;
+        }
+        .vexp-desc {
+            font-size: 14px;
+            color: #666;
+            line-height: 1.6;
+        }
+        .vexp-features {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px;
+            margin-top: 10px;
+        }
+        .vexp-tag {
+            font-size: 12px;
+            color: #666;
+            background: #f0f0f0;
+            padding: 4px 10px;
+            border-radius: 4px;
         }
     </style>
 </head>
 <body>
+
+<!-- CLICKABLE VARIANTS -->
+<div class="variant" style="border: 3px solid #10b981;">
+    <span class="variant-label" style="background: #10b981;">★ Варианты кликабельности</span>
+
+    <style>
+        .click-variant {
+            margin-bottom: 40px;
+            padding-bottom: 32px;
+            border-bottom: 2px dashed #ddd;
+        }
+        .click-variant:last-child {
+            margin-bottom: 0;
+            padding-bottom: 0;
+            border-bottom: none;
+        }
+        .click-variant-label {
+            font-size: 13px;
+            font-weight: 600;
+            color: #10b981;
+            margin-bottom: 16px;
+        }
+
+        /* === VARIANT AC: Arrow + Underline (combined) === */
+        .vac-item {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 14px 0;
+            border-bottom: 1px solid #eee;
+            text-decoration: none;
+            color: inherit;
+        }
+        .vac-item:hover .vac-name {
+            text-decoration: underline;
+            text-underline-offset: 3px;
+        }
+        .vac-item:hover .vac-arrow {
+            transform: translateX(4px);
+        }
+        .vac-left {
+            display: flex;
+            flex-direction: column;
+            gap: 2px;
+        }
+        .vac-name {
+            font-size: 16px;
+            font-weight: 600;
+            color: #1a1a1a;
+            transition: all 0.15s;
+        }
+        .vac-desc {
+            font-size: 13px;
+            color: #999;
+        }
+        .vac-right {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+        .vac-price {
+            font-size: 15px;
+            color: #666;
+            font-weight: 500;
+        }
+        .vac-arrow {
+            color: #999;
+            font-size: 18px;
+            transition: transform 0.2s;
+        }
+
+        /* === VARIANT A: Arrow === */
+        .va-item {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 14px 0;
+            border-bottom: 1px solid #eee;
+            text-decoration: none;
+            color: inherit;
+            transition: padding-left 0.2s;
+        }
+        .va-item:hover {
+            padding-left: 6px;
+        }
+        .va-item:hover .va-arrow {
+            transform: translateX(4px);
+        }
+        .va-left {
+            display: flex;
+            flex-direction: column;
+            gap: 2px;
+        }
+        .va-name {
+            font-size: 16px;
+            font-weight: 600;
+            color: #1a1a1a;
+        }
+        .va-desc {
+            font-size: 13px;
+            color: #999;
+        }
+        .va-right {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+        .va-price {
+            font-size: 15px;
+            color: #666;
+            font-weight: 500;
+        }
+        .va-arrow {
+            color: #999;
+            font-size: 18px;
+            transition: transform 0.2s;
+        }
+
+        /* === VARIANT B: Price as button === */
+        .vb-item {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 14px 0;
+            border-bottom: 1px solid #eee;
+            text-decoration: none;
+            color: inherit;
+        }
+        .vb-item:hover .vb-price {
+            background: #1a1a1a;
+            color: #fff;
+        }
+        .vb-left {
+            display: flex;
+            flex-direction: column;
+            gap: 2px;
+        }
+        .vb-name {
+            font-size: 16px;
+            font-weight: 600;
+            color: #1a1a1a;
+        }
+        .vb-desc {
+            font-size: 13px;
+            color: #999;
+        }
+        .vb-price {
+            font-size: 14px;
+            color: #1a1a1a;
+            font-weight: 600;
+            padding: 8px 16px;
+            border: 1px solid #ddd;
+            border-radius: 6px;
+            transition: all 0.2s;
+        }
+
+        /* === VARIANT C: Underline name === */
+        .vc-item {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 14px 0;
+            border-bottom: 1px solid #eee;
+            text-decoration: none;
+            color: inherit;
+        }
+        .vc-item:hover .vc-name {
+            text-decoration: underline;
+            text-underline-offset: 3px;
+        }
+        .vc-left {
+            display: flex;
+            flex-direction: column;
+            gap: 2px;
+        }
+        .vc-name {
+            font-size: 16px;
+            font-weight: 600;
+            color: #1a1a1a;
+            transition: all 0.15s;
+        }
+        .vc-desc {
+            font-size: 13px;
+            color: #999;
+        }
+        .vc-price {
+            font-size: 15px;
+            color: #666;
+            font-weight: 500;
+        }
+
+        /* === VARIANT D: Full row highlight === */
+        .vd-item {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 14px 16px;
+            margin: 0 -16px;
+            border-bottom: 1px solid #eee;
+            text-decoration: none;
+            color: inherit;
+            border-radius: 8px;
+            transition: background 0.2s;
+        }
+        .vd-item:hover {
+            background: #f5f5f5;
+        }
+        .vd-left {
+            display: flex;
+            flex-direction: column;
+            gap: 2px;
+        }
+        .vd-name {
+            font-size: 16px;
+            font-weight: 600;
+            color: #1a1a1a;
+        }
+        .vd-desc {
+            font-size: 13px;
+            color: #999;
+        }
+        .vd-price {
+            font-size: 15px;
+            color: #666;
+            font-weight: 500;
+        }
+
+        /* === VARIANT E: Buy text === */
+        .ve-item {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 14px 0;
+            border-bottom: 1px solid #eee;
+            text-decoration: none;
+            color: inherit;
+        }
+        .ve-item:hover .ve-buy {
+            color: #1a1a1a;
+        }
+        .ve-left {
+            display: flex;
+            flex-direction: column;
+            gap: 2px;
+        }
+        .ve-name {
+            font-size: 16px;
+            font-weight: 600;
+            color: #1a1a1a;
+        }
+        .ve-desc {
+            font-size: 13px;
+            color: #999;
+        }
+        .ve-right {
+            display: flex;
+            flex-direction: column;
+            align-items: flex-end;
+            gap: 2px;
+        }
+        .ve-price {
+            font-size: 15px;
+            color: #1a1a1a;
+            font-weight: 600;
+        }
+        .ve-buy {
+            font-size: 12px;
+            color: #999;
+            transition: color 0.2s;
+        }
+    </style>
+
+    <!-- VARIANT A+C: Combined -->
+    <div class="click-variant" style="background: #f0fdf4; margin: -20px; padding: 20px; border-radius: 12px; margin-bottom: 40px;">
+        <div class="click-variant-label" style="font-size: 15px;">★ A+C: Стрелка + подчёркивание</div>
+        <a href="#" class="vac-item">
+            <div class="vac-left">
+                <span class="vac-name">Ads Audit</span>
+                <span class="vac-desc">Apple Search Ads or Meta Ads — structure, bids, creatives</span>
+            </div>
+            <div class="vac-right">
+                <span class="vac-price">$497</span>
+                <span class="vac-arrow">→</span>
+            </div>
+        </a>
+        <a href="#" class="vac-item">
+            <div class="vac-left">
+                <span class="vac-name">Product Audit</span>
+                <span class="vac-desc">Monetization, paywall, onboarding analysis</span>
+            </div>
+            <div class="vac-right">
+                <span class="vac-price">$597</span>
+                <span class="vac-arrow">→</span>
+            </div>
+        </a>
+        <a href="#" class="vac-item">
+            <div class="vac-left">
+                <span class="vac-name">Full Audit</span>
+                <span class="vac-desc">Ads + Product combined with growth roadmap</span>
+            </div>
+            <div class="vac-right">
+                <span class="vac-price">$997</span>
+                <span class="vac-arrow">→</span>
+            </div>
+        </a>
+    </div>
+
+    <!-- VARIANT A: Arrow -->
+    <div class="click-variant">
+        <div class="click-variant-label">A. Стрелка справа</div>
+        <a href="#" class="va-item">
+            <div class="va-left">
+                <span class="va-name">Ads Audit</span>
+                <span class="va-desc">Apple Search Ads or Meta Ads — structure, bids, creatives</span>
+            </div>
+            <div class="va-right">
+                <span class="va-price">$497</span>
+                <span class="va-arrow">→</span>
+            </div>
+        </a>
+        <a href="#" class="va-item">
+            <div class="va-left">
+                <span class="va-name">Product Audit</span>
+                <span class="va-desc">Monetization, paywall, onboarding analysis</span>
+            </div>
+            <div class="va-right">
+                <span class="va-price">$597</span>
+                <span class="va-arrow">→</span>
+            </div>
+        </a>
+    </div>
+
+    <!-- VARIANT B: Price as button -->
+    <div class="click-variant">
+        <div class="click-variant-label">B. Цена как кнопка</div>
+        <a href="#" class="vb-item">
+            <div class="vb-left">
+                <span class="vb-name">Ads Audit</span>
+                <span class="vb-desc">Apple Search Ads or Meta Ads — structure, bids, creatives</span>
+            </div>
+            <span class="vb-price">$497</span>
+        </a>
+        <a href="#" class="vb-item">
+            <div class="vb-left">
+                <span class="vb-name">Product Audit</span>
+                <span class="vb-desc">Monetization, paywall, onboarding analysis</span>
+            </div>
+            <span class="vb-price">$597</span>
+        </a>
+    </div>
+
+    <!-- VARIANT C: Underline name -->
+    <div class="click-variant">
+        <div class="click-variant-label">C. Подчёркивание названия</div>
+        <a href="#" class="vc-item">
+            <div class="vc-left">
+                <span class="vc-name">Ads Audit</span>
+                <span class="vc-desc">Apple Search Ads or Meta Ads — structure, bids, creatives</span>
+            </div>
+            <span class="vc-price">$497</span>
+        </a>
+        <a href="#" class="vc-item">
+            <div class="vc-left">
+                <span class="vc-name">Product Audit</span>
+                <span class="vc-desc">Monetization, paywall, onboarding analysis</span>
+            </div>
+            <span class="vc-price">$597</span>
+        </a>
+    </div>
+
+    <!-- VARIANT D: Full row highlight -->
+    <div class="click-variant">
+        <div class="click-variant-label">D. Фон при наведении</div>
+        <a href="#" class="vd-item">
+            <div class="vd-left">
+                <span class="vd-name">Ads Audit</span>
+                <span class="vd-desc">Apple Search Ads or Meta Ads — structure, bids, creatives</span>
+            </div>
+            <span class="vd-price">$497</span>
+        </a>
+        <a href="#" class="vd-item">
+            <div class="vd-left">
+                <span class="vd-name">Product Audit</span>
+                <span class="vd-desc">Monetization, paywall, onboarding analysis</span>
+            </div>
+            <span class="vd-price">$597</span>
+        </a>
+    </div>
+
+    <!-- VARIANT E: Buy text -->
+    <div class="click-variant">
+        <div class="click-variant-label">E. Текст "Buy →"</div>
+        <a href="#" class="ve-item">
+            <div class="ve-left">
+                <span class="ve-name">Ads Audit</span>
+                <span class="ve-desc">Apple Search Ads or Meta Ads — structure, bids, creatives</span>
+            </div>
+            <div class="ve-right">
+                <span class="ve-price">$497</span>
+                <span class="ve-buy">Buy →</span>
+            </div>
+        </a>
+        <a href="#" class="ve-item">
+            <div class="ve-left">
+                <span class="ve-name">Product Audit</span>
+                <span class="ve-desc">Monetization, paywall, onboarding analysis</span>
+            </div>
+            <div class="ve-right">
+                <span class="ve-price">$597</span>
+                <span class="ve-buy">Buy →</span>
+            </div>
+        </a>
+    </div>
+</div>
+
+<!-- IDEAL VARIANT: Full version with FAQ -->
+<div class="variant" style="border: 3px solid #3b82f6;">
+    <span class="variant-label" style="background: #3b82f6;">★ Полный вариант с FAQ</span>
+    <h2 class="section-title">Work With Me</h2>
+
+    <style>
+        .ideal-services {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .ideal-section-label {
+            font-size: 11px;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 1.5px;
+            color: #999;
+            margin-bottom: 12px;
+            margin-top: 24px;
+        }
+        .ideal-section-label:first-of-type {
+            margin-top: 0;
+        }
+
+        .ideal-item {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 14px 0;
+            border-bottom: 1px solid #eee;
+            text-decoration: none;
+            color: inherit;
+        }
+        .ideal-item:hover .ideal-name {
+            text-decoration: underline;
+            text-underline-offset: 3px;
+        }
+        .ideal-item:hover .ideal-arrow {
+            transform: translateX(4px);
+        }
+        .ideal-left {
+            display: flex;
+            flex-direction: column;
+            gap: 2px;
+        }
+        .ideal-name {
+            font-size: 16px;
+            font-weight: 600;
+            color: #1a1a1a;
+            transition: all 0.15s;
+        }
+        .ideal-desc {
+            font-size: 13px;
+            color: #999;
+        }
+        .ideal-right {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+        .ideal-price {
+            font-size: 15px;
+            color: #666;
+            font-weight: 500;
+            white-space: nowrap;
+        }
+        .ideal-arrow {
+            color: #999;
+            font-size: 18px;
+            transition: transform 0.2s;
+        }
+        .ideal-tag {
+            font-size: 11px;
+            color: #10b981;
+            margin-left: 8px;
+            font-weight: 500;
+        }
+
+        .ideal-faq {
+            margin-top: 32px;
+            padding-top: 24px;
+            border-top: 1px solid #eee;
+        }
+        .ideal-faq-title {
+            font-size: 14px;
+            font-weight: 600;
+            color: #999;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin-bottom: 16px;
+        }
+        .ideal-faq-item {
+            margin-bottom: 16px;
+        }
+        .ideal-faq-item:last-child {
+            margin-bottom: 0;
+        }
+        .ideal-faq-q {
+            font-size: 14px;
+            font-weight: 600;
+            color: #1a1a1a;
+            margin-bottom: 4px;
+        }
+        .ideal-faq-a {
+            font-size: 14px;
+            color: #666;
+            line-height: 1.5;
+        }
+        .ideal-faq-a a {
+            color: #1a1a1a;
+            text-decoration: underline;
+            text-underline-offset: 2px;
+        }
+    </style>
+
+    <div class="ideal-services">
+        <div class="ideal-section-label">One-time</div>
+
+        <a href="https://buy.stripe.com/cNi8wP5CRdltc6tbSmfMA00" class="ideal-item">
+            <div class="ideal-left">
+                <span class="ideal-name">Ads Audit</span>
+                <span class="ideal-desc">Apple Search Ads or Meta Ads — structure, bids, creatives</span>
+            </div>
+            <div class="ideal-right">
+                <span class="ideal-price">$497</span>
+                <span class="ideal-arrow">→</span>
+            </div>
+        </a>
+
+        <a href="https://buy.stripe.com/3cI00j9T72GP1rPg8CfMA04" class="ideal-item">
+            <div class="ideal-left">
+                <span class="ideal-name">Product Audit</span>
+                <span class="ideal-desc">Monetization, paywall, onboarding analysis</span>
+            </div>
+            <div class="ideal-right">
+                <span class="ideal-price">$597</span>
+                <span class="ideal-arrow">→</span>
+            </div>
+        </a>
+
+        <a href="https://buy.stripe.com/bJe14n9T7bdl5I5aOifMA03" class="ideal-item">
+            <div class="ideal-left">
+                <span class="ideal-name">Full Audit <span class="ideal-tag">save $97</span></span>
+                <span class="ideal-desc">Ads + Product combined with growth roadmap</span>
+            </div>
+            <div class="ideal-right">
+                <span class="ideal-price">$997</span>
+                <span class="ideal-arrow">→</span>
+            </div>
+        </a>
+
+        <div class="ideal-section-label">Ongoing</div>
+
+        <a href="https://buy.stripe.com/5kQ3cvaXb4OXb2p2hMfMA02" class="ideal-item">
+            <div class="ideal-left">
+                <span class="ideal-name">Growth</span>
+                <span class="ideal-desc">Async via Email & Telegram, weekly check-ins, audits included</span>
+            </div>
+            <div class="ideal-right">
+                <span class="ideal-price">$2,997/mo</span>
+                <span class="ideal-arrow">→</span>
+            </div>
+        </a>
+
+        <a href="https://buy.stripe.com/14AcN52qFa9h3zXf4yfMA01" class="ideal-item">
+            <div class="ideal-left">
+                <span class="ideal-name">Enterprise</span>
+                <span class="ideal-desc">+ weekly calls + hands-on implementation</span>
+            </div>
+            <div class="ideal-right">
+                <span class="ideal-price">$9,990/mo</span>
+                <span class="ideal-arrow">→</span>
+            </div>
+        </a>
+    </div>
+
+    <div class="ideal-faq">
+        <div class="ideal-faq-title">FAQ</div>
+
+        <div class="ideal-faq-item">
+            <div class="ideal-faq-q">Do you do intro/demo calls?</div>
+            <div class="ideal-faq-a">No. I'm not a salesperson — consulting isn't my main thing. If you're unsure I can help, or the price feels high, it's probably better to wait.</div>
+        </div>
+
+        <div class="ideal-faq-item">
+            <div class="ideal-faq-q">Do you help with Google Ads?</div>
+            <div class="ideal-faq-a">Not as a main focus, but I can do spot reviews.</div>
+        </div>
+
+        <div class="ideal-faq-item">
+            <div class="ideal-faq-q">Do you work solo or with a team?</div>
+            <div class="ideal-faq-a">Mostly solo. When needed, I bring in specialists I trust with my own projects.</div>
+        </div>
+
+        <div class="ideal-faq-item">
+            <div class="ideal-faq-q">My budget is ~$1k/mo. Does it make sense?</div>
+            <div class="ideal-faq-a">Probably not yet. Start with my <a href="/">free Apple Search Ads guide</a> — it covers the basics.</div>
+        </div>
+    </div>
+</div>
 
 <!-- VARIANT 1: Ultra Minimalist -->
 <div class="variant">
@@ -254,16 +835,82 @@
     </div>
 </div>
 
-<!-- VARIANT 2: Simple Text -->
+<!-- NEW: Expanded Minimalist -->
 <div class="variant">
-    <span class="variant-label">2. Текстовый блок</span>
+    <span class="variant-label">2. Минимализм + детали</span>
     <h2 class="section-title">Work With Me</h2>
-    <p class="v2-text">
-        I offer <a href="#">ads audits</a> ($497) and <a href="#">product audits</a> ($597)
-        as one-time deep dives into your app's growth potential.
-        For ongoing support, check out my <a href="#">Growth retainer</a> ($2,997/mo) —
-        async consulting via Email & Telegram with weekly check-ins.
-    </p>
+    <div class="vexp-list">
+        <div class="vexp-divider">Аудиты (разово)</div>
+
+        <a href="#" class="vexp-item">
+            <div class="vexp-header">
+                <span class="vexp-name">Ads Audit</span>
+                <span class="vexp-price">$497</span>
+            </div>
+            <p class="vexp-desc">Полный разбор рекламного аккаунта Apple Ads или Meta Ads. Анализ структуры, ставок, креативов и аудиторий. Рекомендации по оптимизации и масштабированию.</p>
+            <div class="vexp-features">
+                <span class="vexp-tag">Apple Ads или Meta</span>
+                <span class="vexp-tag">Loom или PDF/Notion</span>
+                <span class="vexp-tag">7 дней на выполнение</span>
+            </div>
+        </a>
+
+        <a href="#" class="vexp-item">
+            <div class="vexp-header">
+                <span class="vexp-name">Product Audit</span>
+                <span class="vexp-price">$597</span>
+            </div>
+            <p class="vexp-desc">Аудит монетизации и конверсий. Анализ пейволла, ценовой стратегии, онбординга и ключевых экранов. Сравнение с конкурентами и best practices.</p>
+            <div class="vexp-features">
+                <span class="vexp-tag">Paywall & pricing</span>
+                <span class="vexp-tag">Onboarding flow</span>
+                <span class="vexp-tag">Конкурентный анализ</span>
+            </div>
+        </a>
+
+        <a href="#" class="vexp-item">
+            <div class="vexp-header">
+                <span class="vexp-name">Full Audit</span>
+                <span class="vexp-price">$997 <span style="color:#999;font-size:12px;">— экономия $97</span></span>
+            </div>
+            <p class="vexp-desc">Комбинация Ads + Product аудитов. Полная картина роста: от привлечения до монетизации. Включает roadmap по приоритетам роста.</p>
+            <div class="vexp-features">
+                <span class="vexp-tag">Ads + Product</span>
+                <span class="vexp-tag">Growth roadmap</span>
+                <span class="vexp-tag">Приоритеты</span>
+            </div>
+        </a>
+
+        <div class="vexp-divider">Ретейнеры (ежемесячно)</div>
+
+        <a href="#" class="vexp-item">
+            <div class="vexp-header">
+                <span class="vexp-name">Growth</span>
+                <span class="vexp-price">$2,997/mo</span>
+            </div>
+            <p class="vexp-desc">Асинхронная консультационная поддержка через Email и Telegram. Еженедельные check-ins, включённые аудиты, review ваших A/B тестов и креативов.</p>
+            <div class="vexp-features">
+                <span class="vexp-tag">Email & Telegram</span>
+                <span class="vexp-tag">Weekly check-ins</span>
+                <span class="vexp-tag">Аудиты включены</span>
+                <span class="vexp-tag">3 клиента max</span>
+            </div>
+        </a>
+
+        <a href="#" class="vexp-item">
+            <div class="vexp-header">
+                <span class="vexp-name">Enterprise</span>
+                <span class="vexp-price">$9,990/mo</span>
+            </div>
+            <p class="vexp-desc">Всё из Growth + еженедельные звонки 45 минут и hands-on помощь с реализацией. Работаю вместе с вашей командой над growth-инициативами.</p>
+            <div class="vexp-features">
+                <span class="vexp-tag">Всё из Growth</span>
+                <span class="vexp-tag">Звонки 45 мин/нед</span>
+                <span class="vexp-tag">Hands-on</span>
+                <span class="vexp-tag">1-2 клиента</span>
+            </div>
+        </a>
+    </div>
 </div>
 
 <!-- VARIANT 3: Compact List -->
@@ -330,23 +977,9 @@
     </div>
 </div>
 
-<!-- VARIANT 5: Single CTA -->
-<div class="variant">
-    <span class="variant-label">5. Один CTA</span>
-    <h2 class="section-title">Work With Me</h2>
-    <div class="v5-block">
-        <h3>Let's grow your app together</h3>
-        <p>I help app founders scale with paid ads and product optimization. One-time audits or ongoing retainers.</p>
-        <a href="mailto:ivan@sparrowapps.io" class="v5-cta">Get in Touch</a>
-        <div class="v5-links">
-            Or check: <a href="#">Audits</a> · <a href="#">Growth</a> · <a href="#">Enterprise</a>
-        </div>
-    </div>
-</div>
-
 <!-- VARIANT 6: Inline -->
 <div class="variant">
-    <span class="variant-label">6. Инлайн</span>
+    <span class="variant-label">5. Инлайн</span>
     <h2 class="section-title">Work With Me</h2>
     <p class="v6-inline">
         <a href="#">Ads Audit</a> <span class="price">$497</span> ·
@@ -357,44 +990,9 @@
     </p>
 </div>
 
-<!-- VARIANT 7: Muted Cards -->
-<div class="variant">
-    <span class="variant-label">7. Приглушённые карточки</span>
-    <h2 class="section-title">Work With Me</h2>
-    <div class="v7-grid">
-        <a href="#" class="v7-card">
-            <div class="v7-name">Ads Audit</div>
-            <div class="v7-price">$497</div>
-            <div class="v7-desc">Apple or Meta Ads</div>
-        </a>
-        <a href="#" class="v7-card">
-            <div class="v7-name">Product Audit</div>
-            <div class="v7-price">$597</div>
-            <div class="v7-desc">Monetization & UX</div>
-        </a>
-        <a href="#" class="v7-card">
-            <div class="v7-name">Full Audit</div>
-            <div class="v7-price">$997</div>
-            <div class="v7-desc">Ads + Product</div>
-        </a>
-    </div>
-    <div class="v7-row">
-        <a href="#" class="v7-card dark">
-            <div class="v7-name">Growth</div>
-            <div class="v7-price">$2,997/mo</div>
-            <div class="v7-desc">Async consulting + audits</div>
-        </a>
-        <a href="#" class="v7-card dark">
-            <div class="v7-name">Enterprise</div>
-            <div class="v7-price">$9,990/mo</div>
-            <div class="v7-desc">Calls + hands-on</div>
-        </a>
-    </div>
-</div>
-
 <!-- VARIANT 8: Current with Pastel Colors -->
 <div class="variant">
-    <span class="variant-label">8. Текущий + пастельные цвета</span>
+    <span class="variant-label">6. Текущий + пастельные цвета</span>
     <h2 class="section-title">Work With Me</h2>
 
     <style>
@@ -626,6 +1224,484 @@
                 </ul>
                 <span class="v8-cta">Start Now</span>
                 <div class="v8-note">1-2 clients only</div>
+            </a>
+        </div>
+    </div>
+</div>
+
+<!-- VARIANT 9: Current layout, no colors (B&W) -->
+<div class="variant">
+    <span class="variant-label">7. Текущий layout без цветов</span>
+    <h2 class="section-title">Work With Me</h2>
+
+    <style>
+        .v9-services {
+            display: flex;
+            gap: 12px;
+            margin-bottom: 12px;
+        }
+        .v9-label {
+            writing-mode: vertical-rl;
+            transform: rotate(180deg);
+            font-size: 11px;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            color: #fff;
+            padding: 16px 8px;
+            border-radius: 8px;
+            background: #1a1a1a;
+        }
+
+        .v9-audits {
+            display: flex;
+            flex: 1;
+            border-radius: 16px;
+            overflow: hidden;
+            border: 1px solid #e5e5e5;
+        }
+        .v9-audit {
+            flex: 1;
+            padding: 20px;
+            text-decoration: none;
+            color: #1a1a1a;
+            display: flex;
+            flex-direction: column;
+            background: #fff;
+            border-right: 1px solid #e5e5e5;
+            transition: background 0.2s;
+        }
+        .v9-audit:last-child {
+            border-right: none;
+        }
+        .v9-audit:hover {
+            background: #fafafa;
+        }
+        .v9-badge {
+            position: absolute;
+            top: -10px;
+            right: 16px;
+            font-size: 11px;
+            font-weight: 700;
+            padding: 6px 12px;
+            background: #1a1a1a;
+            color: #fff;
+            border-radius: 6px;
+        }
+        .v9-audit.bundle {
+            position: relative;
+            background: #fafafa;
+        }
+        .v9-name {
+            font-size: 15px;
+            font-weight: 700;
+            margin-bottom: 4px;
+        }
+        .v9-price {
+            font-size: 24px;
+            font-weight: 700;
+            margin-bottom: 8px;
+        }
+        .v9-list {
+            list-style: none;
+            font-size: 12px;
+            color: #666;
+            margin-bottom: 16px;
+            flex-grow: 1;
+        }
+        .v9-list li {
+            padding-left: 12px;
+            position: relative;
+            margin-bottom: 4px;
+        }
+        .v9-list li::before {
+            content: "•";
+            position: absolute;
+            left: 0;
+        }
+        .v9-cta {
+            display: inline-block;
+            padding: 10px 20px;
+            background: #1a1a1a;
+            color: #fff;
+            border-radius: 8px;
+            font-size: 14px;
+            font-weight: 600;
+            text-decoration: none;
+            margin-top: auto;
+        }
+
+        .v9-growth-grid {
+            display: flex;
+            flex: 1;
+            gap: 12px;
+        }
+        .v9-growth {
+            flex: 1;
+            padding: 24px;
+            border-radius: 16px;
+            text-decoration: none;
+            display: flex;
+            flex-direction: column;
+            transition: background 0.2s;
+            background: #fff;
+            border: 1px solid #e5e5e5;
+            color: #1a1a1a;
+        }
+        .v9-growth:hover {
+            background: #fafafa;
+        }
+        .v9-growth.featured {
+            background: #1a1a1a;
+            color: #fff;
+            border: none;
+        }
+        .v9-growth .v9-badge-inline {
+            display: inline-block;
+            font-size: 10px;
+            font-weight: 700;
+            padding: 4px 10px;
+            background: #e5e5e5;
+            color: #1a1a1a;
+            border-radius: 4px;
+            margin-bottom: 12px;
+        }
+        .v9-growth.featured .v9-badge-inline {
+            background: rgba(255,255,255,0.2);
+            color: #fff;
+        }
+        .v9-growth .v9-name {
+            font-size: 18px;
+        }
+        .v9-growth .v9-price {
+            font-size: 28px;
+        }
+        .v9-growth .v9-price span {
+            font-size: 14px;
+            opacity: 0.6;
+        }
+        .v9-growth .v9-list {
+            color: #999;
+        }
+        .v9-growth.featured .v9-list {
+            color: rgba(255,255,255,0.7);
+        }
+        .v9-growth .v9-list li::before {
+            content: "✓";
+        }
+        .v9-growth .v9-cta {
+            background: #1a1a1a;
+            color: #fff;
+        }
+        .v9-growth.featured .v9-cta {
+            background: #fff;
+            color: #1a1a1a;
+        }
+        .v9-growth .v9-note {
+            font-size: 11px;
+            opacity: 0.5;
+            margin-top: 12px;
+        }
+    </style>
+
+    <!-- Audits -->
+    <div class="v9-services">
+        <div class="v9-label">Audits</div>
+        <div class="v9-audits">
+            <a href="#" class="v9-audit">
+                <div class="v9-name">Ads Audit</div>
+                <div class="v9-price">$497</div>
+                <ul class="v9-list">
+                    <li>Apple Ads or Meta Ads</li>
+                    <li>Account structure review</li>
+                    <li>Loom or PDF/Notion</li>
+                </ul>
+                <span class="v9-cta">Buy Now</span>
+            </a>
+            <a href="#" class="v9-audit">
+                <div class="v9-name">Product Audit</div>
+                <div class="v9-price">$597</div>
+                <ul class="v9-list">
+                    <li>Monetization strategy</li>
+                    <li>Paywall & pricing review</li>
+                    <li>Loom or PDF/Notion</li>
+                </ul>
+                <span class="v9-cta">Buy Now</span>
+            </a>
+            <a href="#" class="v9-audit bundle">
+                <span class="v9-badge">Save $97</span>
+                <div class="v9-name">Full Audit</div>
+                <div class="v9-price">$997</div>
+                <ul class="v9-list">
+                    <li>Ads + Product combined</li>
+                    <li>Growth roadmap</li>
+                    <li>Loom or PDF/Notion</li>
+                </ul>
+                <span class="v9-cta">Buy Now</span>
+            </a>
+        </div>
+    </div>
+
+    <!-- Growth -->
+    <div class="v9-services">
+        <div class="v9-label">Growth</div>
+        <div class="v9-growth-grid">
+            <a href="#" class="v9-growth">
+                <span class="v9-badge-inline">Popular</span>
+                <div class="v9-name">Growth</div>
+                <div class="v9-price">$2,997 <span>/mo</span></div>
+                <ul class="v9-list">
+                    <li>Async support via Email & Telegram</li>
+                    <li>Full audits included</li>
+                    <li>Weekly check-ins</li>
+                </ul>
+                <span class="v9-cta">Start Now</span>
+                <div class="v9-note">3 clients max</div>
+            </a>
+            <a href="#" class="v9-growth featured">
+                <span class="v9-badge-inline">Premium</span>
+                <div class="v9-name">Enterprise</div>
+                <div class="v9-price">$9,990 <span>/mo</span></div>
+                <ul class="v9-list">
+                    <li>Everything in Growth</li>
+                    <li>Weekly 45-min calls</li>
+                    <li>Hands-on implementation</li>
+                </ul>
+                <span class="v9-cta">Start Now</span>
+                <div class="v9-note">1-2 clients only</div>
+            </a>
+        </div>
+    </div>
+</div>
+
+<!-- VARIANT 10: Soft gray, no aggressive black -->
+<div class="variant">
+    <span class="variant-label">8. Мягкий серый (без агрессии)</span>
+    <h2 class="section-title">Work With Me</h2>
+
+    <style>
+        .v10-services {
+            display: flex;
+            gap: 12px;
+            margin-bottom: 12px;
+        }
+        .v10-label {
+            writing-mode: vertical-rl;
+            transform: rotate(180deg);
+            font-size: 11px;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            color: #fff;
+            padding: 16px 8px;
+            border-radius: 8px;
+            background: #9ca3af;
+        }
+
+        .v10-audits {
+            display: flex;
+            flex: 1;
+            border-radius: 16px;
+            overflow: hidden;
+            background: #fff;
+        }
+        .v10-audit {
+            flex: 1;
+            padding: 20px;
+            text-decoration: none;
+            color: #374151;
+            display: flex;
+            flex-direction: column;
+            background: #fff;
+            border-right: 1px solid #f3f4f6;
+            transition: background 0.2s;
+        }
+        .v10-audit:last-child {
+            border-right: none;
+        }
+        .v10-audit:hover {
+            background: #f9fafb;
+        }
+        .v10-badge {
+            position: absolute;
+            top: -10px;
+            right: 16px;
+            font-size: 11px;
+            font-weight: 600;
+            padding: 5px 10px;
+            background: #e5e7eb;
+            color: #374151;
+            border-radius: 6px;
+        }
+        .v10-audit.bundle {
+            position: relative;
+            background: #f9fafb;
+        }
+        .v10-name {
+            font-size: 15px;
+            font-weight: 600;
+            margin-bottom: 4px;
+            color: #1f2937;
+        }
+        .v10-price {
+            font-size: 24px;
+            font-weight: 700;
+            margin-bottom: 8px;
+            color: #1f2937;
+        }
+        .v10-list {
+            list-style: none;
+            font-size: 13px;
+            color: #6b7280;
+            margin-bottom: 16px;
+            flex-grow: 1;
+        }
+        .v10-list li {
+            padding-left: 14px;
+            position: relative;
+            margin-bottom: 5px;
+        }
+        .v10-list li::before {
+            content: "·";
+            position: absolute;
+            left: 0;
+            color: #9ca3af;
+        }
+        .v10-cta {
+            display: inline-block;
+            padding: 10px 20px;
+            background: #374151;
+            color: #fff;
+            border-radius: 8px;
+            font-size: 14px;
+            font-weight: 600;
+            text-decoration: none;
+            margin-top: auto;
+        }
+        .v10-cta:hover {
+            background: #4b5563;
+        }
+
+        .v10-growth-grid {
+            display: flex;
+            flex: 1;
+            gap: 12px;
+        }
+        .v10-growth {
+            flex: 1;
+            padding: 24px;
+            border-radius: 16px;
+            text-decoration: none;
+            display: flex;
+            flex-direction: column;
+            transition: background 0.2s;
+            background: #fff;
+            color: #374151;
+        }
+        .v10-growth:hover {
+            background: #f9fafb;
+        }
+        .v10-growth.featured {
+            background: #f3f4f6;
+        }
+        .v10-growth .v10-badge-inline {
+            display: inline-block;
+            font-size: 10px;
+            font-weight: 600;
+            padding: 4px 10px;
+            background: #e5e7eb;
+            color: #6b7280;
+            border-radius: 4px;
+            margin-bottom: 12px;
+        }
+        .v10-growth .v10-name {
+            font-size: 18px;
+            color: #1f2937;
+        }
+        .v10-growth .v10-price {
+            font-size: 28px;
+            color: #1f2937;
+        }
+        .v10-growth .v10-price span {
+            font-size: 14px;
+            color: #9ca3af;
+        }
+        .v10-growth .v10-list li::before {
+            content: "✓";
+            color: #9ca3af;
+        }
+        .v10-growth .v10-note {
+            font-size: 11px;
+            color: #9ca3af;
+            margin-top: 12px;
+        }
+    </style>
+
+    <!-- Audits -->
+    <div class="v10-services">
+        <div class="v10-label">Audits</div>
+        <div class="v10-audits">
+            <a href="#" class="v10-audit">
+                <div class="v10-name">Ads Audit</div>
+                <div class="v10-price">$497</div>
+                <ul class="v10-list">
+                    <li>Apple Ads or Meta Ads</li>
+                    <li>Account structure review</li>
+                    <li>Loom or PDF/Notion</li>
+                </ul>
+                <span class="v10-cta">Buy Now</span>
+            </a>
+            <a href="#" class="v10-audit">
+                <div class="v10-name">Product Audit</div>
+                <div class="v10-price">$597</div>
+                <ul class="v10-list">
+                    <li>Monetization strategy</li>
+                    <li>Paywall & pricing review</li>
+                    <li>Loom or PDF/Notion</li>
+                </ul>
+                <span class="v10-cta">Buy Now</span>
+            </a>
+            <a href="#" class="v10-audit bundle">
+                <span class="v10-badge">Save $97</span>
+                <div class="v10-name">Full Audit</div>
+                <div class="v10-price">$997</div>
+                <ul class="v10-list">
+                    <li>Ads + Product combined</li>
+                    <li>Growth roadmap</li>
+                    <li>Loom or PDF/Notion</li>
+                </ul>
+                <span class="v10-cta">Buy Now</span>
+            </a>
+        </div>
+    </div>
+
+    <!-- Growth -->
+    <div class="v10-services">
+        <div class="v10-label">Growth</div>
+        <div class="v10-growth-grid">
+            <a href="#" class="v10-growth">
+                <span class="v10-badge-inline">Popular</span>
+                <div class="v10-name">Growth</div>
+                <div class="v10-price">$2,997 <span>/mo</span></div>
+                <ul class="v10-list">
+                    <li>Async support via Email & Telegram</li>
+                    <li>Full audits included</li>
+                    <li>Weekly check-ins</li>
+                </ul>
+                <span class="v10-cta">Start Now</span>
+                <div class="v10-note">3 clients max</div>
+            </a>
+            <a href="#" class="v10-growth featured">
+                <span class="v10-badge-inline">Premium</span>
+                <div class="v10-name">Enterprise</div>
+                <div class="v10-price">$9,990 <span>/mo</span></div>
+                <ul class="v10-list">
+                    <li>Everything in Growth</li>
+                    <li>Weekly 45-min calls</li>
+                    <li>Hands-on implementation</li>
+                </ul>
+                <span class="v10-cta">Start Now</span>
+                <div class="v10-note">1-2 clients only</div>
             </a>
         </div>
     </div>

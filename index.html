@@ -202,299 +202,114 @@
             color: #1a1a1a;
         }
 
-        /* Services Section */
-        .services-section {
-            display: flex;
-            gap: 12px;
-        }
-
-        .services-label {
-            writing-mode: vertical-rl;
-            text-orientation: mixed;
-            transform: rotate(180deg);
-            font-size: 11px;
-            font-weight: 700;
-            text-transform: uppercase;
-            letter-spacing: 2px;
-            color: #fff;
-            padding: 16px 8px;
-            border-radius: 8px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-        }
-
-        .services-label.audits {
-            background: linear-gradient(180deg, #93c5fd, #60a5fa);
-        }
-
-        .services-label.growth-label {
-            background: linear-gradient(180deg, #fdba74, #fb923c);
-        }
-
-        .services-column {
-            flex: 1;
+        /* Services Section - Minimalist */
+        .services-list {
             display: flex;
             flex-direction: column;
-            gap: 12px;
         }
 
-        /* Audits Grid */
-        .audits-grid {
+        .services-section-label {
+            font-size: 11px;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 1.5px;
+            color: #999;
+            margin-bottom: 12px;
+            margin-top: 24px;
+        }
+        .services-section-label:first-of-type {
+            margin-top: 0;
+        }
+
+        .service-item {
             display: flex;
-            border-radius: 16px;
-            overflow: visible;
-        }
-
-        .audit-box {
-            flex: 1;
-            padding: 20px 24px 28px;
+            justify-content: space-between;
+            align-items: center;
+            padding: 14px 0;
+            border-bottom: 1px solid #eee;
             text-decoration: none;
             color: inherit;
-            border-radius: 0;
-            transition: transform 0.2s, box-shadow 0.2s;
+        }
+        .service-item:hover .service-name {
+            text-decoration: underline;
+            text-underline-offset: 3px;
+        }
+        .service-item:hover .service-arrow {
+            transform: translateX(4px);
+        }
+        .service-left {
             display: flex;
             flex-direction: column;
-            background: #fff;
+            gap: 2px;
         }
-
-        .audit-box:first-child {
-            border-radius: 16px 0 0 16px;
-        }
-
-        .audit-box:last-child {
-            border-radius: 0 16px 16px 0;
-        }
-
-        .audit-box:hover {
-            transform: scale(1.03);
-            box-shadow: 0 8px 24px rgba(0,0,0,0.1);
-            z-index: 2;
-        }
-
-        .audit-box.ads {
-            background: linear-gradient(135deg, #e0f2fe, #bae6fd);
-            color: #1a1a1a;
-            border: none;
-        }
-
-        .audit-box.product {
-            background: linear-gradient(135deg, #f3e8ff, #e9d5ff);
-            color: #1a1a1a;
-            border: none;
-        }
-
-        .audit-box.bundle {
-            background: linear-gradient(135deg, #d1fae5, #a7f3d0);
-            color: #1a1a1a;
-            position: relative;
-            overflow: visible;
-        }
-
-        .audit-box.ads .audit-cta,
-        .audit-box.product .audit-cta {
-            background: #1a1a1a;
-            color: #fff;
-        }
-
-        .audit-box.ads .audit-list,
-        .audit-box.product .audit-list {
-            opacity: 0.6;
-        }
-
-        .audit-header {
-            min-height: 20px;
-            margin-bottom: 4px;
-        }
-
-        .audit-box.bundle:hover {
-            transform: scale(1.03);
-            box-shadow: 0 8px 24px rgba(0,0,0,0.15);
-        }
-
-        .audit-name {
-            font-size: 18px;
-            font-weight: 700;
-            margin-bottom: 6px;
-        }
-
-        .audit-price {
-            font-size: 32px;
-            font-weight: 700;
-            margin-bottom: 10px;
-        }
-
-        .audit-desc {
-            font-size: 13px;
-            opacity: 0.7;
-            margin-bottom: 16px;
-            line-height: 1.4;
-        }
-
-        .audit-list {
-            list-style: none;
-            font-size: 14px;
-            opacity: 0.8;
-            margin-bottom: 20px;
-            line-height: 1.6;
-            flex-grow: 1;
-        }
-
-        .audit-list li {
-            padding-left: 16px;
-            position: relative;
-            margin-bottom: 6px;
-        }
-
-        .audit-list li::before {
-            content: "•";
-            position: absolute;
-            left: 0;
-        }
-
-        .audit-cta {
-            display: inline-block;
-            padding: 12px 24px;
-            background: #1a1a1a;
-            color: #fff;
-            border-radius: 8px;
+        .service-name {
             font-size: 16px;
             font-weight: 600;
-            text-decoration: none;
-            margin-top: auto;
-        }
-
-        .audit-box.bundle .audit-cta {
-            background: #065f46;
-            color: #fff;
-        }
-
-        .audit-box.bundle .audit-list {
-            opacity: 0.7;
-        }
-
-        .audit-badge {
-            position: absolute;
-            top: -10px;
-            right: 16px;
-            font-size: 11px;
-            font-weight: 700;
-            padding: 6px 12px;
-            background: #fde68a;
             color: #1a1a1a;
-            border-radius: 6px;
-            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
-            transform: rotate(2deg);
+            transition: all 0.15s;
         }
-
-        /* Growth Grid */
-        .growth-grid {
+        .service-desc {
+            font-size: 13px;
+            color: #999;
+        }
+        .service-right {
             display: flex;
+            align-items: center;
             gap: 12px;
         }
-
-        .growth-box {
-            flex: 1;
-            padding: 28px 24px;
-            border-radius: 16px;
-            text-decoration: none;
-            color: #fff;
-            transition: transform 0.2s, box-shadow 0.2s;
-            display: flex;
-            flex-direction: column;
-        }
-
-        .growth-box:hover {
-            transform: scale(1.03);
-            box-shadow: 0 8px 24px rgba(0,0,0,0.2);
-        }
-
-        .growth-box.standard {
-            background: linear-gradient(135deg, #374151, #4b5563);
-        }
-
-        .growth-box.premium {
-            background: linear-gradient(135deg, #a78bfa, #8b5cf6);
-        }
-
-        .growth-badge {
-            display: inline-block;
-            font-size: 10px;
-            font-weight: 700;
-            padding: 4px 10px;
-            background: rgba(255,255,255,0.2);
-            color: #fff;
-            border-radius: 4px;
-            margin-bottom: 14px;
-        }
-
-        .growth-box.premium .growth-badge {
-            background: rgba(255,255,255,0.2);
-            color: #fff;
-        }
-
-        .growth-name {
-            font-size: 24px;
-            font-weight: 700;
-            margin-bottom: 6px;
-        }
-
-        .growth-price {
-            font-size: 38px;
-            font-weight: 700;
-            margin-bottom: 12px;
-        }
-
-        .growth-price span {
-            font-size: 16px;
+        .service-price {
+            font-size: 15px;
+            color: #666;
             font-weight: 500;
-            opacity: 0.6;
+            white-space: nowrap;
+        }
+        .service-arrow {
+            color: #999;
+            font-size: 18px;
+            transition: transform 0.2s;
+        }
+        .service-tag {
+            font-size: 11px;
+            color: #10b981;
+            margin-left: 8px;
+            font-weight: 500;
         }
 
-        .growth-desc {
+        /* FAQ */
+        .services-faq {
+            margin-top: 32px;
+            padding-top: 24px;
+            border-top: 1px solid #eee;
+        }
+        .faq-title {
             font-size: 14px;
-            opacity: 0.75;
-            margin-bottom: 20px;
+            font-weight: 600;
+            color: #999;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin-bottom: 16px;
+        }
+        .faq-item {
+            margin-bottom: 16px;
+        }
+        .faq-item:last-child {
+            margin-bottom: 0;
+        }
+        .faq-q {
+            font-size: 14px;
+            font-weight: 600;
+            color: #1a1a1a;
+            margin-bottom: 4px;
+        }
+        .faq-a {
+            font-size: 14px;
+            color: #666;
             line-height: 1.5;
         }
-
-        .growth-list {
-            list-style: none;
-            font-size: 15px;
-            opacity: 0.85;
-            margin-bottom: 24px;
-            line-height: 1.7;
-            flex-grow: 1;
-        }
-
-        .growth-list li {
-            padding-left: 18px;
-            position: relative;
-            margin-bottom: 8px;
-        }
-
-        .growth-list li::before {
-            content: "✓";
-            position: absolute;
-            left: 0;
-            opacity: 0.7;
-        }
-
-        .growth-cta {
-            display: inline-block;
-            padding: 14px 28px;
-            background: #fff;
+        .faq-a a {
             color: #1a1a1a;
-            border-radius: 8px;
-            font-size: 17px;
-            font-weight: 600;
-            text-decoration: none;
-        }
-
-        .growth-note {
-            font-size: 13px;
-            opacity: 0.5;
-            margin-top: 16px;
+            text-decoration: underline;
+            text-underline-offset: 2px;
         }
 
         /* Footer */
@@ -534,43 +349,15 @@
                 flex-direction: column;
             }
 
-            .services-section {
-                flex-direction: column;
+            .service-item {
+                padding: 12px 0;
             }
-
-            .services-label {
-                writing-mode: horizontal-tb;
-                transform: none;
-                padding: 10px 16px;
+            .service-name {
+                font-size: 15px;
             }
-
-            .audits-grid {
-                flex-direction: column;
+            .service-desc {
+                font-size: 12px;
             }
-
-            .audit-box:first-child {
-                border-radius: 16px 16px 0 0;
-            }
-
-            .audit-box:last-child {
-                border-radius: 0 0 16px 16px;
-            }
-
-            .audit-box.ads {
-                border-right: 1px solid #bfdbfe;
-                border-bottom: none;
-            }
-
-            .audit-box.product {
-                border: 1px solid #e9d5ff;
-                border-top: none;
-                border-bottom: none;
-            }
-
-            .growth-grid {
-                flex-direction: column;
-            }
-
         }
     </style>
 </head>
@@ -637,88 +424,88 @@
         <section class="section">
             <h2 class="section-title">Work With Me</h2>
 
-            <!-- Audits -->
-            <div class="services-section" style="margin-bottom: 12px;">
-                <div class="services-label audits">Audits</div>
-                <div class="audits-grid">
-                    <a href="https://buy.stripe.com/cNi8wP5CRdltc6tbSmfMA00" class="audit-box ads">
-                        <div class="audit-header"></div>
-                        <div class="audit-name">Ads Audit</div>
-                        <div class="audit-price">$497</div>
-                        <ul class="audit-list">
-                            <li>Apple Ads or Meta Ads</li>
-                            <li>Account structure review</li>
-                            <li>Keyword & targeting analysis</li>
-                            <li>Budget optimization tips</li>
-                            <li>Loom or PDF/Notion</li>
-                        </ul>
-                        <span class="audit-cta">Buy Now</span>
-                    </a>
-                    <a href="https://buy.stripe.com/3cI00j9T72GP1rPg8CfMA04" class="audit-box product">
-                        <div class="audit-header"></div>
-                        <div class="audit-name">Product Audit</div>
-                        <div class="audit-price">$597</div>
-                        <ul class="audit-list">
-                            <li>Monetization strategy</li>
-                            <li>Paywall & pricing review</li>
-                            <li>Conversion funnel analysis</li>
-                            <li>Onboarding UX feedback</li>
-                            <li>Loom or PDF/Notion</li>
-                        </ul>
-                        <span class="audit-cta">Buy Now</span>
-                    </a>
-                    <a href="https://buy.stripe.com/bJe14n9T7bdl5I5aOifMA03" class="audit-box bundle">
-                        <span class="audit-badge">Save $97</span>
-                        <div class="audit-header"></div>
-                        <div class="audit-name">Full Audit</div>
-                        <div class="audit-price">$997</div>
-                        <ul class="audit-list">
-                            <li>Ads + Product combined</li>
-                            <li>Full-stack app review</li>
-                            <li>Growth roadmap</li>
-                            <li>Priority recommendations</li>
-                            <li>Loom or PDF/Notion</li>
-                        </ul>
-                        <span class="audit-cta">Buy Now</span>
-                    </a>
-                </div>
+            <div class="services-list">
+                <div class="services-section-label">One-time</div>
+
+                <a href="https://buy.stripe.com/cNi8wP5CRdltc6tbSmfMA00" class="service-item">
+                    <div class="service-left">
+                        <span class="service-name">Ads Audit</span>
+                        <span class="service-desc">Apple Search Ads or Meta Ads — structure, bids, creatives</span>
+                    </div>
+                    <div class="service-right">
+                        <span class="service-price">$497</span>
+                        <span class="service-arrow">→</span>
+                    </div>
+                </a>
+
+                <a href="https://buy.stripe.com/3cI00j9T72GP1rPg8CfMA04" class="service-item">
+                    <div class="service-left">
+                        <span class="service-name">Product Audit</span>
+                        <span class="service-desc">Monetization, paywall, onboarding analysis</span>
+                    </div>
+                    <div class="service-right">
+                        <span class="service-price">$597</span>
+                        <span class="service-arrow">→</span>
+                    </div>
+                </a>
+
+                <a href="https://buy.stripe.com/bJe14n9T7bdl5I5aOifMA03" class="service-item">
+                    <div class="service-left">
+                        <span class="service-name">Full Audit <span class="service-tag">save $97</span></span>
+                        <span class="service-desc">Ads + Product combined with growth roadmap</span>
+                    </div>
+                    <div class="service-right">
+                        <span class="service-price">$997</span>
+                        <span class="service-arrow">→</span>
+                    </div>
+                </a>
+
+                <div class="services-section-label">Ongoing</div>
+
+                <a href="https://buy.stripe.com/5kQ3cvaXb4OXb2p2hMfMA02" class="service-item">
+                    <div class="service-left">
+                        <span class="service-name">Growth</span>
+                        <span class="service-desc">Async via Email & Telegram, weekly check-ins, audits included</span>
+                    </div>
+                    <div class="service-right">
+                        <span class="service-price">$2,997/mo</span>
+                        <span class="service-arrow">→</span>
+                    </div>
+                </a>
+
+                <a href="https://buy.stripe.com/14AcN52qFa9h3zXf4yfMA01" class="service-item">
+                    <div class="service-left">
+                        <span class="service-name">Enterprise</span>
+                        <span class="service-desc">+ weekly calls + hands-on implementation</span>
+                    </div>
+                    <div class="service-right">
+                        <span class="service-price">$9,990/mo</span>
+                        <span class="service-arrow">→</span>
+                    </div>
+                </a>
             </div>
 
-            <!-- Growth -->
-            <div class="services-section">
-                <div class="services-label growth-label">Growth</div>
-                <div class="services-column">
-                    <div class="growth-grid">
-                        <a href="https://buy.stripe.com/5kQ3cvaXb4OXb2p2hMfMA02" class="growth-box standard">
-                            <span class="growth-badge">Popular</span>
-                            <div class="growth-name">Growth</div>
-                            <div class="growth-price">$2,997 <span>/mo</span></div>
-                            <ul class="growth-list">
-                                <li>Async support via Email & Telegram</li>
-                                <li>Full ads & product audits included</li>
-                                <li>Creative strategy & ad copy</li>
-                                <li>Growth roadmap & priorities</li>
-                                <li>Weekly async check-ins</li>
-                                <li>Unlimited questions</li>
-                            </ul>
-                            <span class="growth-cta">Start Now</span>
-                            <div class="growth-note">3 clients max · Plan for 3+ months</div>
-                        </a>
-                        <a href="https://buy.stripe.com/14AcN52qFa9h3zXf4yfMA01" class="growth-box premium">
-                            <span class="growth-badge">Premium</span>
-                            <div class="growth-name">Enterprise</div>
-                            <div class="growth-price">$9,990 <span>/mo</span></div>
-                            <ul class="growth-list">
-                                <li>Everything in Growth</li>
-                                <li>Weekly 45-min video calls</li>
-                                <li>Screen-share work sessions</li>
-                                <li>Direct Telegram access</li>
-                                <li>Hands-on implementation help</li>
-                            </ul>
-                            <span class="growth-cta">Start Now</span>
-                            <div class="growth-note">1-2 clients only</div>
-                        </a>
-                    </div>
+            <div class="services-faq">
+                <div class="faq-title">FAQ</div>
+
+                <div class="faq-item">
+                    <div class="faq-q">Do you do intro/demo calls?</div>
+                    <div class="faq-a">No. I'm not a salesperson — consulting isn't my main thing. If you're unsure I can help, or the price feels high, it's probably better to wait.</div>
+                </div>
+
+                <div class="faq-item">
+                    <div class="faq-q">Do you help with Google Ads?</div>
+                    <div class="faq-a">Not as a main focus, but I can do spot reviews.</div>
+                </div>
+
+                <div class="faq-item">
+                    <div class="faq-q">Do you work solo or with a team?</div>
+                    <div class="faq-a">Mostly solo. When needed, I bring in specialists I trust with my own projects.</div>
+                </div>
+
+                <div class="faq-item">
+                    <div class="faq-q">My budget is ~$1k/mo. Does it make sense?</div>
+                    <div class="faq-a">Probably not yet. Start with my <a href="/">free Apple Search Ads guide</a> — it covers the basics.</div>
                 </div>
             </div>
         </section>
