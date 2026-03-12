@@ -29,6 +29,10 @@
             box-sizing: border-box;
         }
 
+        html {
+            scroll-behavior: smooth;
+        }
+
         body {
             font-family: 'Space Grotesk', -apple-system, sans-serif;
             background: #fff;
@@ -319,6 +323,86 @@
             text-align: center;
         }
 
+        .toc {
+            background: #faf8f5;
+            padding: 24px;
+            border-radius: 8px;
+            margin: 32px 0;
+        }
+
+        .toc h3 {
+            font-size: 18px;
+            font-weight: 600;
+            margin: 0 0 16px 0;
+            color: #1a1a1a;
+        }
+
+        .toc ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+
+        .toc li {
+            margin-bottom: 10px;
+        }
+
+        .toc a {
+            color: #666;
+            text-decoration: none;
+            font-size: 16px;
+            transition: color 0.2s;
+        }
+
+        .toc a:hover {
+            color: #1a1a1a;
+            text-decoration: none;
+        }
+
+        .more-articles {
+            margin-bottom: 72px;
+        }
+
+        .more-articles h2 {
+            font-size: 32px;
+            font-weight: 700;
+            margin-bottom: 32px;
+            color: #1a1a1a;
+        }
+
+        .articles-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 24px;
+        }
+
+        .article-card {
+            background: #faf8f5;
+            padding: 24px;
+            border-radius: 8px;
+            text-decoration: none;
+            transition: transform 0.2s, box-shadow 0.2s;
+        }
+
+        .article-card:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+            text-decoration: none;
+        }
+
+        .article-card-title {
+            font-size: 20px;
+            font-weight: 600;
+            color: #1a1a1a;
+            margin-bottom: 8px;
+            line-height: 1.3;
+        }
+
+        .article-card-meta {
+            font-size: 14px;
+            color: #999;
+        }
+
         @media (max-width: 700px) {
             h1 {
                 font-size: 32px;
@@ -355,6 +439,10 @@
                 align-items: center;
                 gap: 16px;
             }
+
+            .articles-grid {
+                grid-template-columns: 1fr;
+            }
         }
     </style>
 </head>
@@ -383,7 +471,22 @@
 
             <p>In this guide, I'll break down each match type, explain when to use them, and share practical tips based on my experience scaling apps to over $1M in revenue using Apple Search Ads.</p>
 
-            <h2>What Are Keyword Match Types?</h2>
+            <div class="toc">
+                <h3>In this article</h3>
+                <ul>
+                    <li><a href="#what-are-keyword-match-types">What Are Keyword Match Types?</a></li>
+                    <li><a href="#broad-match">Broad Match: Maximum Reach</a></li>
+                    <li><a href="#exact-match">Exact Match: Precision Targeting</a></li>
+                    <li><a href="#search-match">Search Match: Apple's Automation</a></li>
+                    <li><a href="#match-type-comparison">Match Type Comparison</a></li>
+                    <li><a href="#campaign-structure">Campaign Structure Best Practices</a></li>
+                    <li><a href="#common-mistakes">Common Mistakes to Avoid</a></li>
+                    <li><a href="#optimize-strategy">How to Optimize Your Match Type Strategy</a></li>
+                    <li><a href="#final-thoughts">Final Thoughts</a></li>
+                </ul>
+            </div>
+
+            <h2 id="what-are-keyword-match-types">What Are Keyword Match Types?</h2>
 
             <p>Keyword match types determine how closely a user's search query needs to match your targeted keywords for your ad to appear. Think of them as filters that control the reach and precision of your campaigns.</p>
 
@@ -395,7 +498,7 @@
                 <li><strong>Search Match</strong> - Apple's automatic matching based on your app metadata</li>
             </ul>
 
-            <h2>Broad Match: Maximum Reach</h2>
+            <h2 id="broad-match">Broad Match: Maximum Reach</h2>
 
             <p>Broad Match is the most flexible match type in Apple Search Ads. When you add a keyword as Broad Match, your ads can appear for that keyword, close variants, plurals, misspellings, synonyms, and related searches.</p>
 
@@ -428,7 +531,7 @@
                 <p><strong>Pro tip:</strong> Use Broad Match in dedicated discovery campaigns with lower bids. Monitor search terms regularly and add high-performers as Exact Match keywords in separate campaigns.</p>
             </div>
 
-            <h2>Exact Match: Precision Targeting</h2>
+            <h2 id="exact-match">Exact Match: Precision Targeting</h2>
 
             <p>Exact Match is the most restrictive match type. Your ads only show when users search for your exact keyword or very close variants (like plurals, misspellings, or the same keyword in different word order).</p>
 
@@ -460,7 +563,7 @@
                 <p><strong>Pro tip:</strong> Run separate ad groups or campaigns for Exact Match keywords with higher bids. This ensures you're always visible for your best-performing search terms.</p>
             </div>
 
-            <h2>Search Match: Apple's Automation</h2>
+            <h2 id="search-match">Search Match: Apple's Automation</h2>
 
             <p>Search Match is Apple's automatic keyword matching feature. When enabled, Apple shows your ads for relevant searches based on your app's metadata (title, subtitle, description) and App Store category.</p>
 
@@ -492,7 +595,7 @@
                 <p><strong>Pro tip:</strong> Always run Search Match in a separate ad group or campaign so you can control bids independently and measure performance accurately.</p>
             </div>
 
-            <h2>Match Type Comparison</h2>
+            <h2 id="match-type-comparison">Match Type Comparison</h2>
 
             <table class="comparison-table">
                 <thead>
@@ -537,7 +640,7 @@
                 </tbody>
             </table>
 
-            <h2>Campaign Structure Best Practices</h2>
+            <h2 id="campaign-structure">Campaign Structure Best Practices</h2>
 
             <p>The most effective Apple Search Ads accounts use all three match types strategically. Here's a proven structure:</p>
 
@@ -557,7 +660,7 @@
 
             <p>Regularly review your Search Terms report and add irrelevant terms as negative keywords. This prevents wasted spend on clicks that won't convert.</p>
 
-            <h2>Common Mistakes to Avoid</h2>
+            <h2 id="common-mistakes">Common Mistakes to Avoid</h2>
 
             <p><strong>Mixing match types in one ad group</strong> - This makes it impossible to measure which match type performs best. Always separate them.</p>
 
@@ -569,7 +672,7 @@
 
             <p><strong>Not optimizing metadata for Search Match</strong> - If your app title and subtitle don't include your core keywords, Search Match won't work effectively.</p>
 
-            <h2>How to Optimize Your Match Type Strategy</h2>
+            <h2 id="optimize-strategy">How to Optimize Your Match Type Strategy</h2>
 
             <p>Here's my weekly optimization process for match types:</p>
 
@@ -589,7 +692,7 @@
                 <a href="https://blog.sparrowapps.io" class="cta-button">Subscribe to Newsletter</a>
             </div>
 
-            <h2>Final Thoughts</h2>
+            <h2 id="final-thoughts">Final Thoughts</h2>
 
             <p>Understanding Apple Search Ads keyword match types is fundamental to running profitable campaigns. Start with Search Match and Broad Match to discover what works, then double down on winners with Exact Match campaigns.</p>
 
@@ -599,6 +702,16 @@
 
             <p>If you need help auditing your Apple Search Ads campaigns or want expert guidance on scaling profitably, <a href="/">check out my services</a>.</p>
         </article>
+
+        <section class="more-articles">
+            <h2>More Articles</h2>
+            <div class="articles-grid">
+                <a href="/blog/app-store-screenshot-sizes.html" class="article-card">
+                    <div class="article-card-title">App Store Screenshot Sizes 2026 - Complete Reference Guide</div>
+                    <div class="article-card-meta">6 min read</div>
+                </a>
+            </div>
+        </section>
 
         <div class="footer">
             <div class="footer-content">

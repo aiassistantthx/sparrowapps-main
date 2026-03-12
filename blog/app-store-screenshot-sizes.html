@@ -29,6 +29,10 @@
             box-sizing: border-box;
         }
 
+        html {
+            scroll-behavior: smooth;
+        }
+
         body {
             font-family: 'Space Grotesk', -apple-system, sans-serif;
             background: #fff;
@@ -319,6 +323,42 @@
             text-align: center;
         }
 
+        .toc {
+            background: #faf8f5;
+            padding: 24px;
+            border-radius: 8px;
+            margin: 32px 0;
+        }
+
+        .toc h3 {
+            font-size: 18px;
+            font-weight: 600;
+            margin: 0 0 16px 0;
+            color: #1a1a1a;
+        }
+
+        .toc ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+
+        .toc li {
+            margin-bottom: 10px;
+        }
+
+        .toc a {
+            color: #666;
+            text-decoration: none;
+            font-size: 16px;
+            transition: color 0.2s;
+        }
+
+        .toc a:hover {
+            color: #1a1a1a;
+            text-decoration: none;
+        }
+
         code {
             background: #f5f5f5;
             padding: 2px 6px;
@@ -391,7 +431,24 @@
 
             <p>This is your complete reference guide for App Store screenshot sizes in 2026. I'll cover iPhone, iPad, and Apple Watch requirements, plus share practical tips from optimizing app store pages that convert at 30%+.</p>
 
-            <h2>Quick Reference: Required Screenshot Sizes</h2>
+            <div class="toc">
+                <h3>In this article</h3>
+                <ul>
+                    <li><a href="#quick-reference">Quick Reference: Required Screenshot Sizes</a></li>
+                    <li><a href="#iphone-sizes">iPhone Screenshot Sizes Explained</a></li>
+                    <li><a href="#ipad-sizes">iPad Screenshot Sizes</a></li>
+                    <li><a href="#apple-watch-sizes">Apple Watch Screenshot Sizes</a></li>
+                    <li><a href="#requirements">Screenshot Requirements & Best Practices</a></li>
+                    <li><a href="#localization">Localization: Do You Need Different Sizes?</a></li>
+                    <li><a href="#common-mistakes">Common Screenshot Size Mistakes</a></li>
+                    <li><a href="#export-screenshots">How to Export Screenshots at the Right Size</a></li>
+                    <li><a href="#checklist">Quick Checklist Before Uploading</a></li>
+                    <li><a href="#wrong-sizes">What Happens If You Upload Wrong Sizes?</a></li>
+                    <li><a href="#final-thoughts">Final Thoughts</a></li>
+                </ul>
+            </div>
+
+            <h2 id="quick-reference">Quick Reference: Required Screenshot Sizes</h2>
 
             <p>Apple requires you to submit screenshots for different device size classes. Here's what you actually need to upload:</p>
 
@@ -454,7 +511,7 @@
                 <p><strong>Pro tip:</strong> You only need to submit ONE set of iPhone screenshots (6.9" is recommended). Apple automatically scales them for other iPhone sizes. Same for iPad - one set covers all sizes.</p>
             </div>
 
-            <h2>iPhone Screenshot Sizes Explained</h2>
+            <h2 id="iphone-sizes">iPhone Screenshot Sizes Explained</h2>
 
             <p>As of 2026, Apple has simplified the iPhone screenshot requirements. Instead of requiring uploads for every device size, you now upload for the largest display and Apple handles the scaling.</p>
 
@@ -505,7 +562,7 @@
                 <p><strong>Important:</strong> Notice the aspect ratio change from 16:9 (old) to 19.5:9 (new). This means you can't just reuse old 5.5" screenshots - they'll have black bars. Design for 19.5:9 from scratch.</p>
             </div>
 
-            <h2>iPad Screenshot Sizes</h2>
+            <h2 id="ipad-sizes">iPad Screenshot Sizes</h2>
 
             <p>iPad screenshots are simpler - they all use a 4:3 aspect ratio. You only need one set.</p>
 
@@ -527,7 +584,7 @@
 
             <p>Apple automatically scales your 12.9" screenshots to fit all other iPad sizes. You don't need separate uploads for 11", 10.9", or any other iPad size.</p>
 
-            <h2>Apple Watch Screenshot Sizes</h2>
+            <h2 id="apple-watch-sizes">Apple Watch Screenshot Sizes</h2>
 
             <p>If your app has an Apple Watch companion, you'll need watch screenshots too.</p>
 
@@ -548,7 +605,7 @@
 
             <p>You typically only need screenshots for the largest watch size (Ultra or 45mm). Apple scales them for smaller sizes.</p>
 
-            <h2>Screenshot Requirements & Best Practices</h2>
+            <h2 id="requirements">Screenshot Requirements & Best Practices</h2>
 
             <h3>File Format & Specs</h3>
 
@@ -574,7 +631,7 @@
 
             <p><strong>6. Test different orders</strong> - A/B test your screenshot order using Apple's Product Page Optimization tool. Sometimes moving screenshot #3 to #1 can boost conversions by 15%+.</p>
 
-            <h2>Localization: Do You Need Different Sizes?</h2>
+            <h2 id="localization">Localization: Do You Need Different Sizes?</h2>
 
             <p>When you localize your app for different languages, you need to upload localized screenshots. But the good news: <strong>the sizes stay the same</strong>.</p>
 
@@ -588,7 +645,7 @@
 
             <p>You can use tools like <a href="https://localizeshots.com">LocalizeShots</a> to automatically translate and regenerate screenshots in 40+ languages without manual design work.</p>
 
-            <h2>Common Screenshot Size Mistakes</h2>
+            <h2 id="common-mistakes">Common Screenshot Size Mistakes</h2>
 
             <p><strong>Wrong aspect ratio</strong> - Using 16:9 screenshots (old iPhones) for 19.5:9 displays (new iPhones) creates black bars and looks unprofessional.</p>
 
@@ -606,7 +663,7 @@
                 <a href="/" class="cta-button">View Services</a>
             </div>
 
-            <h2>How to Export Screenshots at the Right Size</h2>
+            <h2 id="export-screenshots">How to Export Screenshots at the Right Size</h2>
 
             <p>If you're designing in Figma or Sketch, here's the fastest workflow:</p>
 
@@ -619,7 +676,7 @@
 
             <p>For device mockups, use <a href="https://www.figma.com/community/file/1248375255495415511">Apple's official Figma kit</a> or <a href="https://mockuphone.com">MockUPhone</a> for quick exports.</p>
 
-            <h2>Quick Checklist Before Uploading</h2>
+            <h2 id="checklist">Quick Checklist Before Uploading</h2>
 
             <p>Before you submit your screenshots to App Store Connect, verify:</p>
 
@@ -634,13 +691,13 @@
                 <li>✓ No text-only screenshots (must show actual app UI)</li>
             </ul>
 
-            <h2>What Happens If You Upload Wrong Sizes?</h2>
+            <h2 id="wrong-sizes">What Happens If You Upload Wrong Sizes?</h2>
 
             <p>App Store Connect will reject screenshots that don't match accepted dimensions. You'll see an error like "Screenshot dimensions are not valid for this device type."</p>
 
             <p>However, if you upload an older accepted size (like 6.7" instead of 6.9"), it will work - Apple just scales it. But for best results, always use the latest recommended size.</p>
 
-            <h2>Final Thoughts</h2>
+            <h2 id="final-thoughts">Final Thoughts</h2>
 
             <p>App Store screenshot sizes in 2026 are simpler than ever thanks to Apple's automatic scaling. Focus on creating one great set at the largest size (1320 x 2868 for iPhone, 2048 x 2732 for iPad), and you're covered.</p>
 
