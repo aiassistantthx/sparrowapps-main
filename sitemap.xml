@@ -7,13 +7,19 @@
     <priority>1.0</priority>
   </url>
   <url>
-    <loc>https://sparrowapps.io/blog/apple-search-ads-keyword-match-types.html</loc>
+    <loc>https://sparrowapps.io/articles/</loc>
+    <lastmod>2026-03-12</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://sparrowapps.io/articles/keyword-match-types/</loc>
     <lastmod>2026-03-12</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://sparrowapps.io/blog/app-store-screenshot-sizes.html</loc>
+    <loc>https://sparrowapps.io/articles/screenshot-sizes/</loc>
     <lastmod>2026-03-12</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>

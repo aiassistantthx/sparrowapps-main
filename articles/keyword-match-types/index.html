@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="icon" type="image/x-icon" href="/favicon.ico">
+    <link rel="icon" type="image/x-icon" href="../../favicon.ico">
     <title>Apple Search Ads Keyword Match Types Explained - Sparrow Apps</title>
     <meta name="description" content="Master Apple Search Ads keyword match types: Broad Match, Exact Match, and Search Match. Learn when to use each type, optimize your campaigns, and reduce wasted ad spend.">
     <script defer src="https://umami.sparrowapps.io/script.js" data-website-id="51232708-8b33-4685-8f75-dabab1c6218b"></script>
@@ -23,426 +23,77 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
     <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-
-        html {
-            scroll-behavior: smooth;
-        }
-
-        body {
-            font-family: 'Space Grotesk', -apple-system, sans-serif;
-            background: #fff;
-            color: #1a1a1a;
-            line-height: 1.5;
-        }
-
-        .sticky-header {
-            position: sticky;
-            top: 0;
-            background: #fff;
-            border-bottom: 1px solid #eee;
-            z-index: 100;
-            padding: 12px 24px;
-        }
-
-        .sticky-header-content {
-            max-width: 760px;
-            margin: 0 auto;
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-        }
-
-        .sticky-header-left {
-            display: flex;
-            align-items: center;
-            gap: 12px;
-        }
-
-        .sticky-header-photo {
-            width: 36px;
-            height: 36px;
-            border-radius: 50%;
-            object-fit: cover;
-        }
-
-        .sticky-header-name {
-            font-size: 16px;
-            font-weight: 600;
-            color: #1a1a1a;
-            text-decoration: none;
-        }
-
-        .sticky-header-name:hover {
-            text-decoration: none;
-        }
-
-        .sticky-header-nav {
-            display: flex;
-            gap: 24px;
-        }
-
-        .sticky-header-nav a {
-            font-size: 15px;
-            color: #666;
-            text-decoration: none;
-            transition: color 0.2s;
-        }
-
-        .sticky-header-nav a:hover {
-            color: #1a1a1a;
-            text-decoration: none;
-        }
-
-        .container {
-            max-width: 760px;
-            margin: 0 auto;
-            padding: 48px 24px;
-        }
-
-        header {
-            margin-bottom: 48px;
-        }
-
-        .back-link {
-            display: inline-flex;
-            align-items: center;
-            gap: 8px;
-            color: #666;
-            text-decoration: none;
-            font-size: 15px;
-            margin-bottom: 24px;
-            transition: color 0.2s;
-        }
-
-        .back-link:hover {
-            color: #1a1a1a;
-        }
-
-        h1 {
-            font-size: 42px;
-            font-weight: 700;
-            line-height: 1.2;
-            margin-bottom: 16px;
-            color: #1a1a1a;
-        }
-
-        .meta {
-            color: #999;
-            font-size: 15px;
-        }
-
-        article {
-            margin-bottom: 72px;
-        }
-
-        h2 {
-            font-size: 32px;
-            font-weight: 700;
-            margin-top: 48px;
-            margin-bottom: 16px;
-            color: #1a1a1a;
-        }
-
-        h3 {
-            font-size: 24px;
-            font-weight: 600;
-            margin-top: 32px;
-            margin-bottom: 12px;
-            color: #1a1a1a;
-        }
-
-        p {
-            font-size: 17px;
-            margin-bottom: 20px;
-            color: #666;
-        }
-
-        strong {
-            font-weight: 600;
-            color: #1a1a1a;
-        }
-
-        ul, ol {
-            margin-bottom: 20px;
-            padding-left: 24px;
-        }
-
-        li {
-            font-size: 17px;
-            margin-bottom: 8px;
-            color: #666;
-        }
-
-        .highlight-box {
-            background: #faf8f5;
-            border-left: 4px solid #f97316;
-            padding: 20px 24px;
-            margin: 32px 0;
-            border-radius: 4px;
-        }
-
-        .highlight-box p {
-            margin-bottom: 0;
-        }
-
-        .comparison-table {
-            width: 100%;
-            border-collapse: collapse;
-            margin: 32px 0;
-            font-size: 16px;
-        }
-
-        .comparison-table th {
-            background: #faf8f5;
-            padding: 12px;
-            text-align: left;
-            font-weight: 600;
-            border-bottom: 2px solid #e5e5e5;
-        }
-
-        .comparison-table td {
-            padding: 12px;
-            border-bottom: 1px solid #e5e5e5;
-        }
-
-        .cta-box {
-            background: linear-gradient(135deg, #f97316, #ec4899);
-            color: #fff;
-            padding: 32px;
-            border-radius: 12px;
-            text-align: center;
-            margin: 48px 0;
-        }
-
-        .cta-box h3 {
-            color: #fff;
-            margin-top: 0;
-            margin-bottom: 12px;
-        }
-
-        .cta-box p {
-            color: #fff;
-            margin-bottom: 20px;
-            opacity: 0.95;
-        }
-
-        .cta-button {
-            display: inline-block;
-            background: #fff;
-            color: #f97316;
-            padding: 14px 32px;
-            border-radius: 8px;
-            text-decoration: none;
-            font-weight: 600;
-            font-size: 17px;
-            transition: transform 0.2s;
-        }
-
-        .cta-button:hover {
-            transform: translateY(-2px);
-        }
-
-        a {
-            color: #1a1a1a;
-            text-decoration: underline;
-            text-underline-offset: 2px;
-        }
-
-        a:hover {
-            text-decoration: underline;
-        }
-
-        .footer {
-            background: #faf8f5;
-            padding: 48px 24px 32px;
-            margin: 0 -24px;
-        }
-
-        .footer-content {
-            max-width: 760px;
-            margin: 0 auto;
-        }
-
-        .footer-author {
-            display: flex;
-            align-items: center;
-            gap: 16px;
-            margin-bottom: 32px;
-        }
-
-        .footer-photo {
-            width: 48px;
-            height: 48px;
-            border-radius: 50%;
-            object-fit: cover;
-            flex-shrink: 0;
-        }
-
-        .footer-bio {
-            flex: 1;
-        }
-
-        .footer-name {
-            font-size: 17px;
-            font-weight: 600;
-            color: #1a1a1a;
-            margin-bottom: 4px;
-        }
-
-        .footer-tagline {
-            font-size: 15px;
-            color: #666;
-        }
-
-        .footer-links {
-            display: flex;
-            gap: 24px;
-            margin-bottom: 32px;
-        }
-
-        .footer-links a {
-            font-size: 15px;
-            color: #666;
-            text-decoration: none;
-            transition: color 0.2s;
-        }
-
-        .footer-links a:hover {
-            color: #1a1a1a;
-            text-decoration: none;
-        }
-
-        .footer-copyright {
-            font-size: 14px;
-            color: #999;
-            text-align: center;
-        }
-
-        .toc {
-            background: #faf8f5;
-            padding: 24px;
-            border-radius: 8px;
-            margin: 32px 0;
-        }
-
-        .toc h3 {
-            font-size: 18px;
-            font-weight: 600;
-            margin: 0 0 16px 0;
-            color: #1a1a1a;
-        }
-
-        .toc ul {
-            list-style: none;
-            padding: 0;
-            margin: 0;
-        }
-
-        .toc li {
-            margin-bottom: 10px;
-        }
-
-        .toc a {
-            color: #666;
-            text-decoration: none;
-            font-size: 16px;
-            transition: color 0.2s;
-        }
-
-        .toc a:hover {
-            color: #1a1a1a;
-            text-decoration: none;
-        }
-
-        .more-articles {
-            margin-bottom: 72px;
-        }
-
-        .more-articles h2 {
-            font-size: 32px;
-            font-weight: 700;
-            margin-bottom: 32px;
-            color: #1a1a1a;
-        }
-
-        .articles-grid {
-            display: grid;
-            grid-template-columns: repeat(2, 1fr);
-            gap: 24px;
-        }
-
-        .article-card {
-            background: #faf8f5;
-            padding: 24px;
-            border-radius: 8px;
-            text-decoration: none;
-            transition: transform 0.2s, box-shadow 0.2s;
-        }
-
-        .article-card:hover {
-            transform: translateY(-4px);
-            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
-            text-decoration: none;
-        }
-
-        .article-card-title {
-            font-size: 20px;
-            font-weight: 600;
-            color: #1a1a1a;
-            margin-bottom: 8px;
-            line-height: 1.3;
-        }
-
-        .article-card-meta {
-            font-size: 14px;
-            color: #999;
-        }
-
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        html { scroll-behavior: smooth; }
+        body { font-family: 'Space Grotesk', -apple-system, sans-serif; background: #fff; color: #1a1a1a; line-height: 1.5; }
+        .sticky-header { position: sticky; top: 0; background: #fff; border-bottom: 1px solid #eee; z-index: 100; padding: 12px 24px; }
+        .sticky-header-content { max-width: 760px; margin: 0 auto; display: flex; align-items: center; justify-content: space-between; }
+        .sticky-header-left { display: flex; align-items: center; gap: 12px; }
+        .sticky-header-photo { width: 36px; height: 36px; border-radius: 50%; object-fit: cover; }
+        .sticky-header-name { font-size: 16px; font-weight: 600; color: #1a1a1a; text-decoration: none; }
+        .sticky-header-name:hover { text-decoration: none; }
+        .sticky-header-nav { display: flex; gap: 24px; }
+        .sticky-header-nav a { font-size: 15px; color: #666; text-decoration: none; transition: color 0.2s; }
+        .sticky-header-nav a:hover { color: #1a1a1a; text-decoration: none; }
+        .container { max-width: 760px; margin: 0 auto; padding: 48px 24px; }
+        header { margin-bottom: 48px; }
+        .back-link { display: inline-flex; align-items: center; gap: 8px; color: #666; text-decoration: none; font-size: 15px; margin-bottom: 24px; transition: color 0.2s; }
+        .back-link:hover { color: #1a1a1a; }
+        h1 { font-size: 42px; font-weight: 700; line-height: 1.2; margin-bottom: 16px; color: #1a1a1a; }
+        .meta { color: #999; font-size: 15px; }
+        article { margin-bottom: 72px; }
+        h2 { font-size: 32px; font-weight: 700; margin-top: 48px; margin-bottom: 16px; color: #1a1a1a; }
+        h3 { font-size: 24px; font-weight: 600; margin-top: 32px; margin-bottom: 12px; color: #1a1a1a; }
+        p { font-size: 17px; margin-bottom: 20px; color: #666; }
+        strong { font-weight: 600; color: #1a1a1a; }
+        ul, ol { margin-bottom: 20px; padding-left: 24px; }
+        li { font-size: 17px; margin-bottom: 8px; color: #666; }
+        .highlight-box { background: #faf8f5; border-left: 4px solid #f97316; padding: 20px 24px; margin: 32px 0; border-radius: 4px; }
+        .highlight-box p { margin-bottom: 0; }
+        .comparison-table { width: 100%; border-collapse: collapse; margin: 32px 0; font-size: 16px; }
+        .comparison-table th { background: #faf8f5; padding: 12px; text-align: left; font-weight: 600; border-bottom: 2px solid #e5e5e5; }
+        .comparison-table td { padding: 12px; border-bottom: 1px solid #e5e5e5; }
+        .cta-box { background: linear-gradient(135deg, #f97316, #ec4899); color: #fff; padding: 32px; border-radius: 12px; text-align: center; margin: 48px 0; }
+        .cta-box h3 { color: #fff; margin-top: 0; margin-bottom: 12px; }
+        .cta-box p { color: #fff; margin-bottom: 20px; opacity: 0.95; }
+        .cta-button { display: inline-block; background: #fff; color: #f97316; padding: 14px 32px; border-radius: 8px; text-decoration: none; font-weight: 600; font-size: 17px; transition: transform 0.2s; }
+        .cta-button:hover { transform: translateY(-2px); }
+        a { color: #1a1a1a; text-decoration: underline; text-underline-offset: 2px; }
+        a:hover { text-decoration: underline; }
+        .footer { background: #faf8f5; padding: 48px 24px 32px; margin: 0 -24px; }
+        .footer-content { max-width: 760px; margin: 0 auto; }
+        .footer-author { display: flex; align-items: center; gap: 16px; margin-bottom: 32px; }
+        .footer-photo { width: 48px; height: 48px; border-radius: 50%; object-fit: cover; flex-shrink: 0; }
+        .footer-bio { flex: 1; }
+        .footer-name { font-size: 17px; font-weight: 600; color: #1a1a1a; margin-bottom: 4px; }
+        .footer-tagline { font-size: 15px; color: #666; }
+        .footer-links { display: flex; gap: 24px; margin-bottom: 32px; }
+        .footer-links a { font-size: 15px; color: #666; text-decoration: none; transition: color 0.2s; }
+        .footer-links a:hover { color: #1a1a1a; text-decoration: none; }
+        .footer-copyright { font-size: 14px; color: #999; text-align: center; }
+        .toc { background: #faf8f5; padding: 24px; border-radius: 8px; margin: 32px 0; }
+        .toc h3 { font-size: 18px; font-weight: 600; margin: 0 0 16px 0; color: #1a1a1a; }
+        .toc ul { list-style: none; padding: 0; margin: 0; }
+        .toc li { margin-bottom: 10px; }
+        .toc a { color: #666; text-decoration: none; font-size: 16px; transition: color 0.2s; }
+        .toc a:hover { color: #1a1a1a; text-decoration: none; }
+        .more-articles { margin-bottom: 72px; }
+        .more-articles h2 { font-size: 32px; font-weight: 700; margin-bottom: 32px; color: #1a1a1a; }
+        .articles-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 24px; }
+        .article-card { background: #faf8f5; padding: 24px; border-radius: 8px; text-decoration: none; transition: transform 0.2s, box-shadow 0.2s; }
+        .article-card:hover { transform: translateY(-4px); box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1); text-decoration: none; }
+        .article-card-title { font-size: 20px; font-weight: 600; color: #1a1a1a; margin-bottom: 8px; line-height: 1.3; }
+        .article-card-meta { font-size: 14px; color: #999; }
         @media (max-width: 700px) {
-            h1 {
-                font-size: 32px;
-            }
-
-            h2 {
-                font-size: 26px;
-            }
-
-            h3 {
-                font-size: 20px;
-            }
-
-            .comparison-table {
-                font-size: 14px;
-            }
-
-            .comparison-table th,
-            .comparison-table td {
-                padding: 8px;
-            }
-
-            .sticky-header-nav {
-                gap: 16px;
-            }
-
-            .footer-author {
-                flex-direction: column;
-                text-align: center;
-            }
-
-            .footer-links {
-                flex-direction: column;
-                align-items: center;
-                gap: 16px;
-            }
-
-            .articles-grid {
-                grid-template-columns: 1fr;
-            }
+            h1 { font-size: 32px; }
+            h2 { font-size: 26px; }
+            h3 { font-size: 20px; }
+            .comparison-table { font-size: 14px; }
+            .comparison-table th, .comparison-table td { padding: 8px; }
+            .sticky-header-nav { gap: 16px; }
+            .footer-author { flex-direction: column; text-align: center; }
+            .footer-links { flex-direction: column; align-items: center; gap: 16px; }
+            .articles-grid { grid-template-columns: 1fr; }
         }
     </style>
 </head>
@@ -450,18 +101,17 @@
     <div class="sticky-header">
         <div class="sticky-header-content">
             <div class="sticky-header-left">
-                <img src="/photo.jpg" alt="Ivan Sparrow" class="sticky-header-photo" width="36" height="36">
-                <a href="/" class="sticky-header-name">Ivan Sparrow</a>
+                <img src="../../photo.jpg" alt="Ivan Sparrow" class="sticky-header-photo" width="36" height="36">
+                <a href="../../index.html" class="sticky-header-name">Ivan Sparrow</a>
             </div>
             <nav class="sticky-header-nav">
-                <a href="/blog/">Blog</a>
-                <a href="/">Services</a>
+                <a href="https://blog.sparrowapps.io">Newsletter</a>
             </nav>
         </div>
     </div>
     <div class="container">
         <header>
-            <a href="/" class="back-link">← Back to Home</a>
+            <a href="../../index.html" class="back-link">← Back to Home</a>
             <h1>Apple Search Ads Keyword Match Types Explained</h1>
             <div class="meta">Published March 12, 2026 · 8 min read</div>
         </header>
@@ -487,11 +137,8 @@
             </div>
 
             <h2 id="what-are-keyword-match-types">What Are Keyword Match Types?</h2>
-
             <p>Keyword match types determine how closely a user's search query needs to match your targeted keywords for your ad to appear. Think of them as filters that control the reach and precision of your campaigns.</p>
-
             <p>The three match types offer different levels of control:</p>
-
             <ul>
                 <li><strong>Broad Match</strong> - Casts the widest net, matching close variants and related terms</li>
                 <li><strong>Exact Match</strong> - Precisely targets specific keywords and close variants</li>
@@ -499,13 +146,9 @@
             </ul>
 
             <h2 id="broad-match">Broad Match: Maximum Reach</h2>
-
             <p>Broad Match is the most flexible match type in Apple Search Ads. When you add a keyword as Broad Match, your ads can appear for that keyword, close variants, plurals, misspellings, synonyms, and related searches.</p>
-
             <h3>How Broad Match Works</h3>
-
             <p>If you target the keyword "photo editor" with Broad Match, your ad could show for searches like:</p>
-
             <ul>
                 <li>photo editing app</li>
                 <li>picture editor</li>
@@ -513,90 +156,66 @@
                 <li>image editor</li>
                 <li>photo filter</li>
             </ul>
-
             <p>Apple's algorithm determines relevance based on your app's metadata, user behavior, and contextual signals. This means Broad Match can surface your app for queries you might not have thought to target.</p>
-
             <h3>When to Use Broad Match</h3>
-
             <p>Broad Match works best when:</p>
-
             <ul>
                 <li><strong>Starting a new campaign</strong> - You're still discovering which keywords convert</li>
                 <li><strong>Testing new categories</strong> - Exploring how users search for apps like yours</li>
                 <li><strong>You have budget to test</strong> - Ready to invest in discovery at a potentially higher CPA</li>
                 <li><strong>Your app serves multiple use cases</strong> - A productivity app might match both "to-do list" and "task manager"</li>
             </ul>
-
             <div class="highlight-box">
                 <p><strong>Pro tip:</strong> Use Broad Match in dedicated discovery campaigns with lower bids. Monitor search terms regularly and add high-performers as Exact Match keywords in separate campaigns.</p>
             </div>
 
             <h2 id="exact-match">Exact Match: Precision Targeting</h2>
-
             <p>Exact Match is the most restrictive match type. Your ads only show when users search for your exact keyword or very close variants (like plurals, misspellings, or the same keyword in different word order).</p>
-
             <h3>How Exact Match Works</h3>
-
             <p>If you target "fitness tracker" as Exact Match, your ad will show for:</p>
-
             <ul>
                 <li>fitness tracker</li>
                 <li>fitness trackers (plural)</li>
                 <li>tracker fitness (reordered)</li>
                 <li>fitnes tracker (misspelling)</li>
             </ul>
-
             <p>But it won't show for related terms like "workout app" or "health tracker" - even though they might be relevant to your app.</p>
-
             <h3>When to Use Exact Match</h3>
-
             <p>Exact Match is ideal when:</p>
-
             <ul>
                 <li><strong>You've identified high-converting keywords</strong> - After testing with Broad Match or Search Match</li>
                 <li><strong>You want predictable costs</strong> - Exact Match typically has lower CPA and better conversion rates</li>
                 <li><strong>Protecting your brand</strong> - Exact Match on your app name prevents competitors from bidding on it</li>
                 <li><strong>You have limited budget</strong> - Focus spend on keywords you know work</li>
             </ul>
-
             <div class="highlight-box">
                 <p><strong>Pro tip:</strong> Run separate ad groups or campaigns for Exact Match keywords with higher bids. This ensures you're always visible for your best-performing search terms.</p>
             </div>
 
             <h2 id="search-match">Search Match: Apple's Automation</h2>
-
             <p>Search Match is Apple's automatic keyword matching feature. When enabled, Apple shows your ads for relevant searches based on your app's metadata (title, subtitle, description) and App Store category.</p>
-
             <h3>How Search Match Works</h3>
-
             <p>You don't choose keywords with Search Match - Apple does it for you. The algorithm analyzes:</p>
-
             <ul>
                 <li>Your app's metadata and keywords</li>
                 <li>Similar apps in your category</li>
                 <li>User behavior and conversion data</li>
                 <li>Competitive landscape</li>
             </ul>
-
             <p>Search Match automatically adjusts to show your ad for the most relevant queries, continuously learning from performance data.</p>
-
             <h3>When to Use Search Match</h3>
-
             <p>Search Match is valuable when:</p>
-
             <ul>
                 <li><strong>Starting out</strong> - You don't have keyword research data yet</li>
                 <li><strong>Supplementing existing campaigns</strong> - Capture additional relevant traffic you might miss</li>
                 <li><strong>Your metadata is well-optimized</strong> - Search Match quality depends on your app's keywords</li>
                 <li><strong>You want to discover new keywords</strong> - Review Search Terms reports to find hidden gems</li>
             </ul>
-
             <div class="highlight-box">
                 <p><strong>Pro tip:</strong> Always run Search Match in a separate ad group or campaign so you can control bids independently and measure performance accurately.</p>
             </div>
 
             <h2 id="match-type-comparison">Match Type Comparison</h2>
-
             <table class="comparison-table">
                 <thead>
                     <tr>
@@ -607,75 +226,34 @@
                     </tr>
                 </thead>
                 <tbody>
-                    <tr>
-                        <td><strong>Reach</strong></td>
-                        <td>Wide</td>
-                        <td>Narrow</td>
-                        <td>Medium-Wide</td>
-                    </tr>
-                    <tr>
-                        <td><strong>Control</strong></td>
-                        <td>Medium</td>
-                        <td>High</td>
-                        <td>Low</td>
-                    </tr>
-                    <tr>
-                        <td><strong>CPA</strong></td>
-                        <td>Medium-High</td>
-                        <td>Low-Medium</td>
-                        <td>Varies</td>
-                    </tr>
-                    <tr>
-                        <td><strong>Discovery</strong></td>
-                        <td>Good</td>
-                        <td>None</td>
-                        <td>Excellent</td>
-                    </tr>
-                    <tr>
-                        <td><strong>Best For</strong></td>
-                        <td>Testing & scale</td>
-                        <td>Known winners</td>
-                        <td>Automation & discovery</td>
-                    </tr>
+                    <tr><td><strong>Reach</strong></td><td>Wide</td><td>Narrow</td><td>Medium-Wide</td></tr>
+                    <tr><td><strong>Control</strong></td><td>Medium</td><td>High</td><td>Low</td></tr>
+                    <tr><td><strong>CPA</strong></td><td>Medium-High</td><td>Low-Medium</td><td>Varies</td></tr>
+                    <tr><td><strong>Discovery</strong></td><td>Good</td><td>None</td><td>Excellent</td></tr>
+                    <tr><td><strong>Best For</strong></td><td>Testing & scale</td><td>Known winners</td><td>Automation & discovery</td></tr>
                 </tbody>
             </table>
 
             <h2 id="campaign-structure">Campaign Structure Best Practices</h2>
-
             <p>The most effective Apple Search Ads accounts use all three match types strategically. Here's a proven structure:</p>
-
             <h3>1. Discovery Campaign (Search Match + Broad Match)</h3>
-
             <p>Start with a discovery campaign using Search Match and Broad Match keywords. Set conservative bids (20-30% below your target CPA) and let it run for at least 2 weeks to gather data.</p>
-
             <h3>2. Exact Match Campaign</h3>
-
             <p>Move high-performing keywords from your discovery campaign to a dedicated Exact Match campaign. Increase bids by 30-50% to ensure visibility for these proven converters.</p>
-
             <h3>3. Brand Defense Campaign</h3>
-
             <p>Create an Exact Match campaign for your brand name and variations. Set max bids to defend against competitors.</p>
-
             <h3>4. Negative Keywords</h3>
-
             <p>Regularly review your Search Terms report and add irrelevant terms as negative keywords. This prevents wasted spend on clicks that won't convert.</p>
 
             <h2 id="common-mistakes">Common Mistakes to Avoid</h2>
-
             <p><strong>Mixing match types in one ad group</strong> - This makes it impossible to measure which match type performs best. Always separate them.</p>
-
             <p><strong>Using only Exact Match</strong> - You'll miss discovery opportunities and limit your reach. Balance precision with exploration.</p>
-
             <p><strong>Ignoring Search Terms reports</strong> - This is where you find gold. Check weekly to discover new keywords and add negatives.</p>
-
             <p><strong>Setting the same bid for all match types</strong> - Exact Match keywords deserve higher bids because they convert better. Broad Match should have lower bids due to less precision.</p>
-
             <p><strong>Not optimizing metadata for Search Match</strong> - If your app title and subtitle don't include your core keywords, Search Match won't work effectively.</p>
 
             <h2 id="optimize-strategy">How to Optimize Your Match Type Strategy</h2>
-
             <p>Here's my weekly optimization process for match types:</p>
-
             <ol>
                 <li><strong>Monday: Review Search Terms</strong> - Download search terms from the last 7 days for all campaigns</li>
                 <li><strong>Identify winners</strong> - Look for search terms with >3% conversion rate and acceptable CPA</li>
@@ -683,7 +261,6 @@
                 <li><strong>Add negatives</strong> - Flag irrelevant terms and add them as negative keywords</li>
                 <li><strong>Adjust bids</strong> - Increase bids on high-performers, decrease on underperformers</li>
             </ol>
-
             <p>This continuous optimization cycle ensures you're always improving campaign efficiency while discovering new opportunities.</p>
 
             <div class="cta-box">
@@ -693,20 +270,16 @@
             </div>
 
             <h2 id="final-thoughts">Final Thoughts</h2>
-
             <p>Understanding Apple Search Ads keyword match types is fundamental to running profitable campaigns. Start with Search Match and Broad Match to discover what works, then double down on winners with Exact Match campaigns.</p>
-
             <p>The key is to maintain this balance: use automated and broad targeting for discovery, while protecting your budget with precise Exact Match campaigns for proven keywords.</p>
-
             <p>Remember, Apple Search Ads is not set-and-forget. Regular optimization of your match type strategy - reviewing search terms, adding negatives, and reallocating budget - is what separates successful campaigns from wasteful ones.</p>
-
-            <p>If you need help auditing your Apple Search Ads campaigns or want expert guidance on scaling profitably, <a href="/">check out my services</a>.</p>
+            <p>If you need help auditing your Apple Search Ads campaigns or want expert guidance on scaling profitably, <a href="../../index.html">check out my services</a>.</p>
         </article>
 
         <section class="more-articles">
             <h2>More Articles</h2>
             <div class="articles-grid">
-                <a href="/blog/app-store-screenshot-sizes.html" class="article-card">
+                <a href="../screenshot-sizes/" class="article-card">
                     <div class="article-card-title">App Store Screenshot Sizes 2026 - Complete Reference Guide</div>
                     <div class="article-card-meta">6 min read</div>
                 </a>
@@ -716,7 +289,7 @@
         <div class="footer">
             <div class="footer-content">
                 <div class="footer-author">
-                    <img src="/photo.jpg" alt="Ivan Sparrow" class="footer-photo" width="48" height="48">
+                    <img src="../../photo.jpg" alt="Ivan Sparrow" class="footer-photo" width="48" height="48">
                     <div class="footer-bio">
                         <div class="footer-name">Ivan Sparrow</div>
                         <div class="footer-tagline">Building apps, scaling with ads.</div>
@@ -725,7 +298,8 @@
                 <div class="footer-links">
                     <a href="https://blog.sparrowapps.io">Newsletter</a>
                     <a href="https://x.com/ivesparrowai">Twitter</a>
-                    <a href="/">Services</a>
+                    <a href="../">Articles</a>
+                    <a href="../../index.html">Services</a>
                 </div>
                 <div class="footer-copyright">
                     © 2026 SparrowApps

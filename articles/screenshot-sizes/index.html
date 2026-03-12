@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="icon" type="image/x-icon" href="/favicon.ico">
+    <link rel="icon" type="image/x-icon" href="../../favicon.ico">
     <title>App Store Screenshot Sizes 2026 - Complete Reference Guide</title>
     <meta name="description" content="Complete reference for App Store screenshot sizes in 2026. iPhone, iPad, and Apple Watch dimensions, aspect ratios, and best practices for ASO.">
     <script defer src="https://umami.sparrowapps.io/script.js" data-website-id="51232708-8b33-4685-8f75-dabab1c6218b"></script>
@@ -23,386 +23,78 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
     <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-
-        html {
-            scroll-behavior: smooth;
-        }
-
-        body {
-            font-family: 'Space Grotesk', -apple-system, sans-serif;
-            background: #fff;
-            color: #1a1a1a;
-            line-height: 1.5;
-        }
-
-        .sticky-header {
-            position: sticky;
-            top: 0;
-            background: #fff;
-            border-bottom: 1px solid #eee;
-            z-index: 100;
-            padding: 12px 24px;
-        }
-
-        .sticky-header-content {
-            max-width: 760px;
-            margin: 0 auto;
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-        }
-
-        .sticky-header-left {
-            display: flex;
-            align-items: center;
-            gap: 12px;
-        }
-
-        .sticky-header-photo {
-            width: 36px;
-            height: 36px;
-            border-radius: 50%;
-            object-fit: cover;
-        }
-
-        .sticky-header-name {
-            font-size: 16px;
-            font-weight: 600;
-            color: #1a1a1a;
-            text-decoration: none;
-        }
-
-        .sticky-header-name:hover {
-            text-decoration: none;
-        }
-
-        .sticky-header-nav {
-            display: flex;
-            gap: 24px;
-        }
-
-        .sticky-header-nav a {
-            font-size: 15px;
-            color: #666;
-            text-decoration: none;
-            transition: color 0.2s;
-        }
-
-        .sticky-header-nav a:hover {
-            color: #1a1a1a;
-            text-decoration: none;
-        }
-
-        .container {
-            max-width: 760px;
-            margin: 0 auto;
-            padding: 48px 24px;
-        }
-
-        header {
-            margin-bottom: 48px;
-        }
-
-        .back-link {
-            display: inline-flex;
-            align-items: center;
-            gap: 8px;
-            color: #666;
-            text-decoration: none;
-            font-size: 15px;
-            margin-bottom: 24px;
-            transition: color 0.2s;
-        }
-
-        .back-link:hover {
-            color: #1a1a1a;
-        }
-
-        h1 {
-            font-size: 42px;
-            font-weight: 700;
-            line-height: 1.2;
-            margin-bottom: 16px;
-            color: #1a1a1a;
-        }
-
-        .meta {
-            color: #999;
-            font-size: 15px;
-        }
-
-        article {
-            margin-bottom: 72px;
-        }
-
-        h2 {
-            font-size: 32px;
-            font-weight: 700;
-            margin-top: 48px;
-            margin-bottom: 16px;
-            color: #1a1a1a;
-        }
-
-        h3 {
-            font-size: 24px;
-            font-weight: 600;
-            margin-top: 32px;
-            margin-bottom: 12px;
-            color: #1a1a1a;
-        }
-
-        p {
-            font-size: 17px;
-            margin-bottom: 20px;
-            color: #666;
-        }
-
-        strong {
-            font-weight: 600;
-            color: #1a1a1a;
-        }
-
-        ul, ol {
-            margin-bottom: 20px;
-            padding-left: 24px;
-        }
-
-        li {
-            font-size: 17px;
-            margin-bottom: 8px;
-            color: #666;
-        }
-
-        .highlight-box {
-            background: #faf8f5;
-            border-left: 4px solid #f97316;
-            padding: 20px 24px;
-            margin: 32px 0;
-            border-radius: 4px;
-        }
-
-        .highlight-box p {
-            margin-bottom: 0;
-        }
-
-        .comparison-table {
-            width: 100%;
-            border-collapse: collapse;
-            margin: 32px 0;
-            font-size: 16px;
-        }
-
-        .comparison-table th {
-            background: #faf8f5;
-            padding: 12px;
-            text-align: left;
-            font-weight: 600;
-            border-bottom: 2px solid #e5e5e5;
-        }
-
-        .comparison-table td {
-            padding: 12px;
-            border-bottom: 1px solid #e5e5e5;
-        }
-
-        .cta-box {
-            background: linear-gradient(135deg, #f97316, #ec4899);
-            color: #fff;
-            padding: 32px;
-            border-radius: 12px;
-            text-align: center;
-            margin: 48px 0;
-        }
-
-        .cta-box h3 {
-            color: #fff;
-            margin-top: 0;
-            margin-bottom: 12px;
-        }
-
-        .cta-box p {
-            color: #fff;
-            margin-bottom: 20px;
-            opacity: 0.95;
-        }
-
-        .cta-button {
-            display: inline-block;
-            background: #fff;
-            color: #f97316;
-            padding: 14px 32px;
-            border-radius: 8px;
-            text-decoration: none;
-            font-weight: 600;
-            font-size: 17px;
-            transition: transform 0.2s;
-        }
-
-        .cta-button:hover {
-            transform: translateY(-2px);
-        }
-
-        a {
-            color: #1a1a1a;
-            text-decoration: underline;
-            text-underline-offset: 2px;
-        }
-
-        a:hover {
-            text-decoration: underline;
-        }
-
-        .footer {
-            background: #faf8f5;
-            padding: 48px 24px 32px;
-            margin: 0 -24px;
-        }
-
-        .footer-content {
-            max-width: 760px;
-            margin: 0 auto;
-        }
-
-        .footer-author {
-            display: flex;
-            align-items: center;
-            gap: 16px;
-            margin-bottom: 32px;
-        }
-
-        .footer-photo {
-            width: 48px;
-            height: 48px;
-            border-radius: 50%;
-            object-fit: cover;
-            flex-shrink: 0;
-        }
-
-        .footer-bio {
-            flex: 1;
-        }
-
-        .footer-name {
-            font-size: 17px;
-            font-weight: 600;
-            color: #1a1a1a;
-            margin-bottom: 4px;
-        }
-
-        .footer-tagline {
-            font-size: 15px;
-            color: #666;
-        }
-
-        .footer-links {
-            display: flex;
-            gap: 24px;
-            margin-bottom: 32px;
-        }
-
-        .footer-links a {
-            font-size: 15px;
-            color: #666;
-            text-decoration: none;
-            transition: color 0.2s;
-        }
-
-        .footer-links a:hover {
-            color: #1a1a1a;
-            text-decoration: none;
-        }
-
-        .footer-copyright {
-            font-size: 14px;
-            color: #999;
-            text-align: center;
-        }
-
-        .toc {
-            background: #faf8f5;
-            padding: 24px;
-            border-radius: 8px;
-            margin: 32px 0;
-        }
-
-        .toc h3 {
-            font-size: 18px;
-            font-weight: 600;
-            margin: 0 0 16px 0;
-            color: #1a1a1a;
-        }
-
-        .toc ul {
-            list-style: none;
-            padding: 0;
-            margin: 0;
-        }
-
-        .toc li {
-            margin-bottom: 10px;
-        }
-
-        .toc a {
-            color: #666;
-            text-decoration: none;
-            font-size: 16px;
-            transition: color 0.2s;
-        }
-
-        .toc a:hover {
-            color: #1a1a1a;
-            text-decoration: none;
-        }
-
-        code {
-            background: #f5f5f5;
-            padding: 2px 6px;
-            border-radius: 3px;
-            font-size: 15px;
-            font-family: monospace;
-        }
-
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        html { scroll-behavior: smooth; }
+        body { font-family: 'Space Grotesk', -apple-system, sans-serif; background: #fff; color: #1a1a1a; line-height: 1.5; }
+        .sticky-header { position: sticky; top: 0; background: #fff; border-bottom: 1px solid #eee; z-index: 100; padding: 12px 24px; }
+        .sticky-header-content { max-width: 760px; margin: 0 auto; display: flex; align-items: center; justify-content: space-between; }
+        .sticky-header-left { display: flex; align-items: center; gap: 12px; }
+        .sticky-header-photo { width: 36px; height: 36px; border-radius: 50%; object-fit: cover; }
+        .sticky-header-name { font-size: 16px; font-weight: 600; color: #1a1a1a; text-decoration: none; }
+        .sticky-header-name:hover { text-decoration: none; }
+        .sticky-header-nav { display: flex; gap: 24px; }
+        .sticky-header-nav a { font-size: 15px; color: #666; text-decoration: none; transition: color 0.2s; }
+        .sticky-header-nav a:hover { color: #1a1a1a; text-decoration: none; }
+        .container { max-width: 760px; margin: 0 auto; padding: 48px 24px; }
+        header { margin-bottom: 48px; }
+        .back-link { display: inline-flex; align-items: center; gap: 8px; color: #666; text-decoration: none; font-size: 15px; margin-bottom: 24px; transition: color 0.2s; }
+        .back-link:hover { color: #1a1a1a; }
+        h1 { font-size: 42px; font-weight: 700; line-height: 1.2; margin-bottom: 16px; color: #1a1a1a; }
+        .meta { color: #999; font-size: 15px; }
+        article { margin-bottom: 72px; }
+        h2 { font-size: 32px; font-weight: 700; margin-top: 48px; margin-bottom: 16px; color: #1a1a1a; }
+        h3 { font-size: 24px; font-weight: 600; margin-top: 32px; margin-bottom: 12px; color: #1a1a1a; }
+        p { font-size: 17px; margin-bottom: 20px; color: #666; }
+        strong { font-weight: 600; color: #1a1a1a; }
+        ul, ol { margin-bottom: 20px; padding-left: 24px; }
+        li { font-size: 17px; margin-bottom: 8px; color: #666; }
+        .highlight-box { background: #faf8f5; border-left: 4px solid #f97316; padding: 20px 24px; margin: 32px 0; border-radius: 4px; }
+        .highlight-box p { margin-bottom: 0; }
+        .comparison-table { width: 100%; border-collapse: collapse; margin: 32px 0; font-size: 16px; }
+        .comparison-table th { background: #faf8f5; padding: 12px; text-align: left; font-weight: 600; border-bottom: 2px solid #e5e5e5; }
+        .comparison-table td { padding: 12px; border-bottom: 1px solid #e5e5e5; }
+        .cta-box { background: linear-gradient(135deg, #f97316, #ec4899); color: #fff; padding: 32px; border-radius: 12px; text-align: center; margin: 48px 0; }
+        .cta-box h3 { color: #fff; margin-top: 0; margin-bottom: 12px; }
+        .cta-box p { color: #fff; margin-bottom: 20px; opacity: 0.95; }
+        .cta-button { display: inline-block; background: #fff; color: #f97316; padding: 14px 32px; border-radius: 8px; text-decoration: none; font-weight: 600; font-size: 17px; transition: transform 0.2s; }
+        .cta-button:hover { transform: translateY(-2px); }
+        a { color: #1a1a1a; text-decoration: underline; text-underline-offset: 2px; }
+        a:hover { text-decoration: underline; }
+        .footer { background: #faf8f5; padding: 48px 24px 32px; margin: 0 -24px; }
+        .footer-content { max-width: 760px; margin: 0 auto; }
+        .footer-author { display: flex; align-items: center; gap: 16px; margin-bottom: 32px; }
+        .footer-photo { width: 48px; height: 48px; border-radius: 50%; object-fit: cover; flex-shrink: 0; }
+        .footer-bio { flex: 1; }
+        .footer-name { font-size: 17px; font-weight: 600; color: #1a1a1a; margin-bottom: 4px; }
+        .footer-tagline { font-size: 15px; color: #666; }
+        .footer-links { display: flex; gap: 24px; margin-bottom: 32px; }
+        .footer-links a { font-size: 15px; color: #666; text-decoration: none; transition: color 0.2s; }
+        .footer-links a:hover { color: #1a1a1a; text-decoration: none; }
+        .footer-copyright { font-size: 14px; color: #999; text-align: center; }
+        .toc { background: #faf8f5; padding: 24px; border-radius: 8px; margin: 32px 0; }
+        .toc h3 { font-size: 18px; font-weight: 600; margin: 0 0 16px 0; color: #1a1a1a; }
+        .toc ul { list-style: none; padding: 0; margin: 0; }
+        .toc li { margin-bottom: 10px; }
+        .toc a { color: #666; text-decoration: none; font-size: 16px; transition: color 0.2s; }
+        .toc a:hover { color: #1a1a1a; text-decoration: none; }
+        code { background: #f5f5f5; padding: 2px 6px; border-radius: 3px; font-size: 15px; font-family: monospace; }
+        .more-articles { margin-bottom: 72px; }
+        .more-articles h2 { font-size: 32px; font-weight: 700; margin-bottom: 32px; color: #1a1a1a; }
+        .articles-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 24px; }
+        .article-card { background: #faf8f5; padding: 24px; border-radius: 8px; text-decoration: none; transition: transform 0.2s, box-shadow 0.2s; }
+        .article-card:hover { transform: translateY(-4px); box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1); text-decoration: none; }
+        .article-card-title { font-size: 20px; font-weight: 600; color: #1a1a1a; margin-bottom: 8px; line-height: 1.3; }
+        .article-card-meta { font-size: 14px; color: #999; }
         @media (max-width: 700px) {
-            h1 {
-                font-size: 32px;
-            }
-
-            h2 {
-                font-size: 26px;
-            }
-
-            h3 {
-                font-size: 20px;
-            }
-
-            .comparison-table {
-                font-size: 14px;
-            }
-
-            .comparison-table th,
-            .comparison-table td {
-                padding: 8px;
-            }
-
-            .sticky-header-nav {
-                gap: 16px;
-            }
-
-            .footer-author {
-                flex-direction: column;
-                text-align: center;
-            }
-
-            .footer-links {
-                flex-direction: column;
-                align-items: center;
-                gap: 16px;
-            }
+            h1 { font-size: 32px; }
+            h2 { font-size: 26px; }
+            h3 { font-size: 20px; }
+            .comparison-table { font-size: 14px; }
+            .comparison-table th, .comparison-table td { padding: 8px; }
+            .sticky-header-nav { gap: 16px; }
+            .footer-author { flex-direction: column; text-align: center; }
+            .footer-links { flex-direction: column; align-items: center; gap: 16px; }
+            .articles-grid { grid-template-columns: 1fr; }
         }
     </style>
 </head>
@@ -410,18 +102,17 @@
     <div class="sticky-header">
         <div class="sticky-header-content">
             <div class="sticky-header-left">
-                <img src="/photo.jpg" alt="Ivan Sparrow" class="sticky-header-photo" width="36" height="36">
-                <a href="/" class="sticky-header-name">Ivan Sparrow</a>
+                <img src="../../photo.jpg" alt="Ivan Sparrow" class="sticky-header-photo" width="36" height="36">
+                <a href="../../index.html" class="sticky-header-name">Ivan Sparrow</a>
             </div>
             <nav class="sticky-header-nav">
-                <a href="/blog/">Blog</a>
-                <a href="/">Services</a>
+                <a href="https://blog.sparrowapps.io">Newsletter</a>
             </nav>
         </div>
     </div>
     <div class="container">
         <header>
-            <a href="/" class="back-link">← Back to Home</a>
+            <a href="../../index.html" class="back-link">← Back to Home</a>
             <h1>App Store Screenshot Sizes 2026 - Complete Reference Guide</h1>
             <div class="meta">Published March 12, 2026 · 6 min read</div>
         </header>
@@ -449,9 +140,7 @@
             </div>
 
             <h2 id="quick-reference">Quick Reference: Required Screenshot Sizes</h2>
-
             <p>Apple requires you to submit screenshots for different device size classes. Here's what you actually need to upload:</p>
-
             <table class="comparison-table">
                 <thead>
                     <tr>
@@ -462,67 +151,26 @@
                     </tr>
                 </thead>
                 <tbody>
-                    <tr>
-                        <td><strong>iPhone 6.9" Display</strong></td>
-                        <td>Required</td>
-                        <td>1320 x 2868</td>
-                        <td>19.5:9</td>
-                    </tr>
-                    <tr>
-                        <td><strong>iPhone 6.7" Display</strong></td>
-                        <td>Alternative</td>
-                        <td>1290 x 2796</td>
-                        <td>19.5:9</td>
-                    </tr>
-                    <tr>
-                        <td><strong>iPhone 6.5" Display</strong></td>
-                        <td>Alternative</td>
-                        <td>1284 x 2778</td>
-                        <td>19.5:9</td>
-                    </tr>
-                    <tr>
-                        <td><strong>iPhone 5.5" Display</strong></td>
-                        <td>Optional</td>
-                        <td>1242 x 2208</td>
-                        <td>16:9</td>
-                    </tr>
-                    <tr>
-                        <td><strong>iPad Pro 12.9" (6th gen)</strong></td>
-                        <td>Required</td>
-                        <td>2048 x 2732</td>
-                        <td>4:3</td>
-                    </tr>
-                    <tr>
-                        <td><strong>iPad Pro 12.9" (2nd gen)</strong></td>
-                        <td>Alternative</td>
-                        <td>2048 x 2732</td>
-                        <td>4:3</td>
-                    </tr>
-                    <tr>
-                        <td><strong>Apple Watch Ultra</strong></td>
-                        <td>Optional</td>
-                        <td>502 x 410</td>
-                        <td>N/A</td>
-                    </tr>
+                    <tr><td><strong>iPhone 6.9" Display</strong></td><td>Required</td><td>1320 x 2868</td><td>19.5:9</td></tr>
+                    <tr><td><strong>iPhone 6.7" Display</strong></td><td>Alternative</td><td>1290 x 2796</td><td>19.5:9</td></tr>
+                    <tr><td><strong>iPhone 6.5" Display</strong></td><td>Alternative</td><td>1284 x 2778</td><td>19.5:9</td></tr>
+                    <tr><td><strong>iPhone 5.5" Display</strong></td><td>Optional</td><td>1242 x 2208</td><td>16:9</td></tr>
+                    <tr><td><strong>iPad Pro 12.9" (6th gen)</strong></td><td>Required</td><td>2048 x 2732</td><td>4:3</td></tr>
+                    <tr><td><strong>iPad Pro 12.9" (2nd gen)</strong></td><td>Alternative</td><td>2048 x 2732</td><td>4:3</td></tr>
+                    <tr><td><strong>Apple Watch Ultra</strong></td><td>Optional</td><td>502 x 410</td><td>N/A</td></tr>
                 </tbody>
             </table>
-
             <div class="highlight-box">
                 <p><strong>Pro tip:</strong> You only need to submit ONE set of iPhone screenshots (6.9" is recommended). Apple automatically scales them for other iPhone sizes. Same for iPad - one set covers all sizes.</p>
             </div>
 
             <h2 id="iphone-sizes">iPhone Screenshot Sizes Explained</h2>
-
             <p>As of 2026, Apple has simplified the iPhone screenshot requirements. Instead of requiring uploads for every device size, you now upload for the largest display and Apple handles the scaling.</p>
-
             <h3>Primary iPhone Size: 6.9" Display</h3>
-
             <p><strong>Dimensions:</strong> 1320 x 2868 pixels<br>
             <strong>Aspect Ratio:</strong> 19.5:9<br>
             <strong>Devices:</strong> iPhone 16 Pro Max</p>
-
             <p>This is the current largest iPhone display and the recommended size to design for. When you upload screenshots at this size, they'll work for:</p>
-
             <ul>
                 <li>iPhone 16 Pro Max (6.9")</li>
                 <li>iPhone 16 Plus (6.7")</li>
@@ -533,47 +181,32 @@
                 <li>iPhone 13 Pro Max (6.7")</li>
                 <li>All other recent iPhones</li>
             </ul>
-
             <h3>Alternative: 6.7" Display</h3>
-
             <p><strong>Dimensions:</strong> 1290 x 2796 pixels<br>
             <strong>Aspect Ratio:</strong> 19.5:9<br>
             <strong>Devices:</strong> iPhone 15 Pro Max, iPhone 14 Pro Max</p>
-
             <p>You can use this size instead if you don't have iPhone 16 Pro Max screenshots yet. The aspect ratio is the same, so designs translate well.</p>
-
             <h3>Alternative: 6.5" Display</h3>
-
             <p><strong>Dimensions:</strong> 1284 x 2778 pixels<br>
             <strong>Aspect Ratio:</strong> 19.5:9<br>
             <strong>Devices:</strong> iPhone 13 Pro Max, iPhone 12 Pro Max</p>
-
             <p>Still widely used and accepted. Good choice if you're designing for slightly older devices.</p>
-
             <h3>Legacy: 5.5" Display</h3>
-
             <p><strong>Dimensions:</strong> 1242 x 2208 pixels<br>
             <strong>Aspect Ratio:</strong> 16:9<br>
             <strong>Devices:</strong> iPhone 8 Plus, iPhone 7 Plus, iPhone 6s Plus</p>
-
             <p>This size is no longer required but can be uploaded optionally. Only do this if you have significant users on iPhone 8 Plus or older (check your analytics).</p>
-
             <div class="highlight-box">
                 <p><strong>Important:</strong> Notice the aspect ratio change from 16:9 (old) to 19.5:9 (new). This means you can't just reuse old 5.5" screenshots - they'll have black bars. Design for 19.5:9 from scratch.</p>
             </div>
 
             <h2 id="ipad-sizes">iPad Screenshot Sizes</h2>
-
             <p>iPad screenshots are simpler - they all use a 4:3 aspect ratio. You only need one set.</p>
-
             <h3>Primary iPad Size: 12.9" Display (6th gen)</h3>
-
             <p><strong>Dimensions:</strong> 2048 x 2732 pixels<br>
             <strong>Aspect Ratio:</strong> 4:3<br>
             <strong>Devices:</strong> iPad Pro 12.9" (all generations)</p>
-
             <p>This size covers:</p>
-
             <ul>
                 <li>iPad Pro 12.9" (all models)</li>
                 <li>iPad Pro 11" (all models)</li>
@@ -581,34 +214,23 @@
                 <li>iPad mini (all models)</li>
                 <li>Standard iPad (all models)</li>
             </ul>
-
             <p>Apple automatically scales your 12.9" screenshots to fit all other iPad sizes. You don't need separate uploads for 11", 10.9", or any other iPad size.</p>
 
             <h2 id="apple-watch-sizes">Apple Watch Screenshot Sizes</h2>
-
             <p>If your app has an Apple Watch companion, you'll need watch screenshots too.</p>
-
             <h3>Apple Watch Ultra</h3>
-
             <p><strong>Dimensions:</strong> 502 x 410 pixels<br>
             <strong>Display:</strong> 49mm case</p>
-
             <h3>Apple Watch Series 9 (45mm)</h3>
-
             <p><strong>Dimensions:</strong> 396 x 484 pixels<br>
             <strong>Display:</strong> 45mm case</p>
-
             <h3>Apple Watch Series 9 (41mm)</h3>
-
             <p><strong>Dimensions:</strong> 352 x 430 pixels<br>
             <strong>Display:</strong> 41mm case</p>
-
             <p>You typically only need screenshots for the largest watch size (Ultra or 45mm). Apple scales them for smaller sizes.</p>
 
             <h2 id="requirements">Screenshot Requirements & Best Practices</h2>
-
             <h3>File Format & Specs</h3>
-
             <ul>
                 <li><strong>Format:</strong> PNG or JPEG (PNG recommended for quality)</li>
                 <li><strong>Color space:</strong> RGB (not CMYK)</li>
@@ -616,70 +238,49 @@
                 <li><strong>Minimum:</strong> 3 screenshots required</li>
                 <li><strong>Maximum:</strong> 10 screenshots allowed</li>
             </ul>
-
             <h3>Design Tips for Better Conversions</h3>
-
             <p><strong>1. First screenshot is critical</strong> - 60% of users only see the first screenshot. Make it count by showing your #1 value proposition.</p>
-
             <p><strong>2. Use text overlays</strong> - Don't rely on the UI alone. Add benefit-driven headlines to each screenshot. Example: "Track Your Habits in Seconds" works better than just showing the UI.</p>
-
             <p><strong>3. Show the benefit, not just features</strong> - Instead of "Beautiful Dashboard", say "See Your Progress at a Glance".</p>
-
             <p><strong>4. Keep text large and readable</strong> - Remember, screenshots appear small on the App Store. Use at least 120pt font for headlines.</p>
-
             <p><strong>5. Consistent branding</strong> - Use the same color scheme, fonts, and style across all screenshots. This looks more professional.</p>
-
             <p><strong>6. Test different orders</strong> - A/B test your screenshot order using Apple's Product Page Optimization tool. Sometimes moving screenshot #3 to #1 can boost conversions by 15%+.</p>
 
             <h2 id="localization">Localization: Do You Need Different Sizes?</h2>
-
             <p>When you localize your app for different languages, you need to upload localized screenshots. But the good news: <strong>the sizes stay the same</strong>.</p>
-
             <p>For each locale, upload:</p>
-
             <ul>
                 <li>One set of iPhone screenshots (6.9" or 6.7")</li>
                 <li>One set of iPad screenshots (12.9")</li>
                 <li>One set of Apple Watch screenshots (if applicable)</li>
             </ul>
-
             <p>You can use tools like <a href="https://localizeshots.com">LocalizeShots</a> to automatically translate and regenerate screenshots in 40+ languages without manual design work.</p>
 
             <h2 id="common-mistakes">Common Screenshot Size Mistakes</h2>
-
             <p><strong>Wrong aspect ratio</strong> - Using 16:9 screenshots (old iPhones) for 19.5:9 displays (new iPhones) creates black bars and looks unprofessional.</p>
-
             <p><strong>Mixing portrait and landscape</strong> - Stick to portrait for iPhone, portrait for iPad (unless your app is landscape-only).</p>
-
             <p><strong>Text too small</strong> - Remember screenshots appear at ~25% size on the App Store listing. Use large, bold text.</p>
-
             <p><strong>Not updating for new devices</strong> - When new iPhones launch with different screen sizes, update your screenshots within 1-2 months to avoid outdated UI.</p>
-
             <p><strong>Uploading low resolution</strong> - Always use the maximum resolution (2x or 3x). Blurry screenshots kill conversions.</p>
 
             <div class="cta-box">
                 <h3>Need Help Optimizing Your App Store Presence?</h3>
                 <p>Get expert App Store Optimization (ASO) advice and boost your conversion rates.</p>
-                <a href="/" class="cta-button">View Services</a>
+                <a href="../../index.html" class="cta-button">View Services</a>
             </div>
 
             <h2 id="export-screenshots">How to Export Screenshots at the Right Size</h2>
-
             <p>If you're designing in Figma or Sketch, here's the fastest workflow:</p>
-
             <ol>
                 <li><strong>Create frames</strong> with exact dimensions (e.g., 1320 x 2868 for iPhone)</li>
                 <li><strong>Design your screenshot</strong> with device mockup + text overlays</li>
                 <li><strong>Export at 1x</strong> (don't export at 2x or 3x - the frame size IS the final size)</li>
                 <li><strong>Save as PNG</strong> for best quality</li>
             </ol>
-
             <p>For device mockups, use <a href="https://www.figma.com/community/file/1248375255495415511">Apple's official Figma kit</a> or <a href="https://mockuphone.com">MockUPhone</a> for quick exports.</p>
 
             <h2 id="checklist">Quick Checklist Before Uploading</h2>
-
             <p>Before you submit your screenshots to App Store Connect, verify:</p>
-
             <ul>
                 <li>✓ Correct dimensions (1320 x 2868 for iPhone, 2048 x 2732 for iPad)</li>
                 <li>✓ PNG format with RGB color space</li>
@@ -692,24 +293,29 @@
             </ul>
 
             <h2 id="wrong-sizes">What Happens If You Upload Wrong Sizes?</h2>
-
             <p>App Store Connect will reject screenshots that don't match accepted dimensions. You'll see an error like "Screenshot dimensions are not valid for this device type."</p>
-
             <p>However, if you upload an older accepted size (like 6.7" instead of 6.9"), it will work - Apple just scales it. But for best results, always use the latest recommended size.</p>
 
             <h2 id="final-thoughts">Final Thoughts</h2>
-
             <p>App Store screenshot sizes in 2026 are simpler than ever thanks to Apple's automatic scaling. Focus on creating one great set at the largest size (1320 x 2868 for iPhone, 2048 x 2732 for iPad), and you're covered.</p>
-
             <p>Remember: the technical specs matter, but what matters more is the content of your screenshots. Clear value propositions, readable text, and showing your app solving real problems will always beat pixel-perfect dimensions with weak messaging.</p>
-
-            <p>Bookmark this page as your go-to reference whenever you need to update your App Store screenshots. And if you need help optimizing your entire App Store presence for better conversions, <a href="/">check out my ASO services</a>.</p>
+            <p>Bookmark this page as your go-to reference whenever you need to update your App Store screenshots. And if you need help optimizing your entire App Store presence for better conversions, <a href="../../index.html">check out my ASO services</a>.</p>
         </article>
+
+        <section class="more-articles">
+            <h2>More Articles</h2>
+            <div class="articles-grid">
+                <a href="../keyword-match-types/" class="article-card">
+                    <div class="article-card-title">Apple Search Ads Keyword Match Types Explained</div>
+                    <div class="article-card-meta">8 min read</div>
+                </a>
+            </div>
+        </section>
 
         <div class="footer">
             <div class="footer-content">
                 <div class="footer-author">
-                    <img src="/photo.jpg" alt="Ivan Sparrow" class="footer-photo" width="48" height="48">
+                    <img src="../../photo.jpg" alt="Ivan Sparrow" class="footer-photo" width="48" height="48">
                     <div class="footer-bio">
                         <div class="footer-name">Ivan Sparrow</div>
                         <div class="footer-tagline">Building apps, scaling with ads.</div>
@@ -718,7 +324,8 @@
                 <div class="footer-links">
                     <a href="https://blog.sparrowapps.io">Newsletter</a>
                     <a href="https://x.com/ivesparrowai">Twitter</a>
-                    <a href="/">Services</a>
+                    <a href="../">Articles</a>
+                    <a href="../../index.html">Services</a>
                 </div>
                 <div class="footer-copyright">
                     © 2026 SparrowApps
